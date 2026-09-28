@@ -23,13 +23,17 @@
   <meta name="twitter:title" content="Spartan Phalanx — Ops, SecOps &amp; Infrastructure Consulting" />
   <meta name="twitter:description" content="Spartan Phalanx is ops, SecOps, and IT infrastructure consulting — ISO readiness, penetration testing, security architecture, and hardened operations for teams that hold the line under pressure." />
   <meta name="twitter:image" content="https://spartanphalanx.com/assets/og.png" />
-  <meta name="theme-color" content="#1a1410" />
+  <meta name="theme-color" content="#f4efe6" />
   <script>
     (function () {
       var saved = null;
       try { saved = localStorage.getItem("spartanphalanx-theme"); } catch (e) {}
       var themes = { light: 1, dark: 1, green: 1, "light-green": 1, "dark-green": 1, blue: 1, "light-blue": 1 };
-      document.documentElement.setAttribute("data-theme", themes[saved] ? saved : "dark");
+      var colors = { light: "#f4efe6", dark: "#1a1410", green: "#dceadf", "light-green": "#e7f2ea", "dark-green": "#0f1f18", blue: "#16324f", "light-blue": "#e7f1f8" };
+      var name = themes[saved] ? saved : "light";
+      document.documentElement.setAttribute("data-theme", name);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta && colors[name]) meta.setAttribute("content", colors[name]);
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -37,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=1.0.11" />
+  <link rel="stylesheet" href="assets/site.css?v=1.0.11-2" />
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -76,8 +80,8 @@
         <div class="settings-panel" id="settings-panel" hidden>
           <p class="settings-label" id="settings-label">Appearance</p>
           <div class="theme-list" role="radiogroup" aria-labelledby="settings-label">
-            <button type="button" role="radio" data-theme="light" aria-checked="false">Light</button>
-            <button type="button" role="radio" data-theme="dark" aria-checked="true">Dark</button>
+            <button type="button" role="radio" data-theme="light" aria-checked="true">Light</button>
+            <button type="button" role="radio" data-theme="dark" aria-checked="false">Dark</button>
             <button type="button" role="radio" data-theme="green" aria-checked="false">Green</button>
             <button type="button" role="radio" data-theme="light-green" aria-checked="false">Light green</button>
             <button type="button" role="radio" data-theme="dark-green" aria-checked="false">Dark green</button>
@@ -100,15 +104,22 @@
 
   <main id="main">
     <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">Operations · Security · Infrastructure</p>
-        <h1>Spartan Phalanx</h1>
-        <p class="motto">Shoulder to shoulder. Shield to shield.</p>
-        <p class="lede">We come to your facility, examine how the operation is actually run, and tell you what must change for it to last.</p>
-        <div class="hero-cta">
-          <a class="btn primary" href="contact.html">Request a consultation</a>
-          <a class="btn ghost" href="practice.html">The practice</a>
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Operations · Security · Infrastructure</p>
+          <h1>Spartan Phalanx</h1>
+          <p class="motto">Shoulder to shoulder. Shield to shield.</p>
+          <p class="lede">We come to your facility, examine how the operation is actually run, and tell you what must change for it to last.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="contact.html">Request a consultation</a>
+            <a class="btn ghost" href="practice.html">The practice</a>
+          </div>
         </div>
+        <nav class="rail" aria-label="Disciplines">
+          <a href="services.html#operations"><strong>Operations</strong><span>Platforms, runbooks, and change control that is observed.</span></a>
+          <a href="services.html#secops"><strong>Security</strong><span>Detection, architecture, and testing as one posture.</span></a>
+          <a href="services.html#infrastructure"><strong>Infrastructure</strong><span>Capacity, resilience, backup, and recovery.</span></a>
+        </nav>
       </div>
     </section>
 
@@ -123,23 +134,35 @@
       </div>
     </section>
 
-    <section class="facts" aria-label="How an engagement proceeds">
-      <div class="wrap facts-grid">
-        <article>
-          <p class="num">01</p>
-          <h2>Assess</h2>
-          <p>An on-site review of systems, personnel, and leadership, with a written account of what needs attention.</p>
-        </article>
-        <article>
-          <p class="num">02</p>
-          <h2>Plan</h2>
-          <p>A prioritized sequence to strengthen, detect, document, and test according to risk.</p>
-        </article>
-        <article>
-          <p class="num">03</p>
-          <h2>Sustain</h2>
-          <p>A retainer or follow-on cycle as the environment and the threat landscape change.</p>
-        </article>
+    <section class="band" aria-label="How an engagement proceeds">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>How an engagement proceeds</h2>
+          <p>A fixed assessment first. Implementation that follows is agreed separately.</p>
+        </header>
+        <div class="process">
+          <article>
+            <p class="num">01</p>
+            <h3>Assess</h3>
+            <p>An on-site review of systems, personnel, and leadership, with a written account of what needs attention.</p>
+          </article>
+          <article>
+            <p class="num">02</p>
+            <h3>Plan</h3>
+            <p>A prioritized sequence to strengthen, detect, document, and test according to risk.</p>
+          </article>
+          <article>
+            <p class="num">03</p>
+            <h3>Implement and verify</h3>
+            <p>Execute the plan, assess or test, remediate, and retest until the posture holds.</p>
+          </article>
+          <article>
+            <p class="num">04</p>
+            <h3>Sustain</h3>
+            <p>A retainer or follow-on cycle as the environment and the threat landscape change.</p>
+          </article>
+        </div>
+        <p class="section-link"><a href="method.html">Read the method</a></p>
       </div>
     </section>
 
@@ -163,36 +186,76 @@
         <div class="cards">
           <article class="card">
             <p class="num">01</p>
-            <h3>IT operations</h3>
+            <h3><a href="services.html#operations">IT operations</a></h3>
             <p>Stable platforms, maintained runbooks, change control that is observed, and monitoring directed to the responsible owner.</p>
           </article>
           <article class="card">
             <p class="num">02</p>
-            <h3>Security operations</h3>
+            <h3><a href="services.html#secops">Security operations</a></h3>
             <p>Detection and response that connect the security operations center, information technology, and leadership, so alerts result in decisions.</p>
           </article>
           <article class="card">
             <p class="num">03</p>
-            <h3>Security architecture</h3>
+            <h3><a href="services.html#architecture">Security architecture</a></h3>
             <p>Identity, network, cloud, and endpoint controls designed as one posture.</p>
           </article>
           <article class="card">
             <p class="num">04</p>
-            <h3>ISO readiness</h3>
+            <h3><a href="services.html#iso">ISO readiness</a></h3>
             <p>ISO/IEC 27001 and related control work treated as an operating requirement, with evidence that can be produced before assessment.</p>
           </article>
           <article class="card">
             <p class="num">05</p>
-            <h3>Penetration testing</h3>
+            <h3><a href="services.html#testing">Penetration testing</a></h3>
             <p>Testing informed by adversary methods, focused on the paths that matter, followed by remediation until findings are closed and retested.</p>
           </article>
           <article class="card">
             <p class="num">06</p>
-            <h3>Infrastructure</h3>
+            <h3><a href="services.html#infrastructure">Infrastructure</a></h3>
             <p>On-premises, hybrid, and cloud foundations with defined capacity, resilience, backup, and recovery.</p>
           </article>
         </div>
         <p class="section-link"><a href="services.html">Read the services</a></p>
+      </div>
+    </section>
+
+    <section class="band">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>Where the work was learned</h2>
+          <p>Security, quality, and infrastructure are examined as one system, from hardware and networks through cloud and data.</p>
+        </header>
+        <div class="record">
+          <article>
+            <h3>Medical devices</h3>
+            <p>Directing technology and field teams under FDA and ISO requirements.</p>
+          </article>
+          <article>
+            <h3>Energy and telecommunications</h3>
+            <p>Energy and telecommunications networks.</p>
+          </article>
+          <article>
+            <h3>Security platforms</h3>
+            <p>Security platforms.</p>
+          </article>
+          <article>
+            <h3>United States Marine Corps</h3>
+            <p>Service in the United States Marine Corps.</p>
+          </article>
+        </div>
+        <p class="section-link"><a href="practice.html">Read the practice</a></p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <p class="eyebrow">Contact</p>
+        <h2>Describe the matter.</h2>
+        <p>Operations, security operations, an ISO timeline, or an assessment. We will reply with a defined next step.</p>
+        <div class="hero-cta">
+          <a class="btn primary" href="contact.html">Request a consultation</a>
+          <a class="btn ghost" href="mailto:rmf@SpartanPhalanx.com">rmf@SpartanPhalanx.com</a>
+        </div>
       </div>
     </section>
 
@@ -213,6 +276,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/site.js?v=1.0.11"></script>
+  <script src="assets/site.js?v=1.0.11-2"></script>
 </body>
 </html>

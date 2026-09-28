@@ -23,13 +23,17 @@
   <meta name="twitter:title" content="Method — Spartan Phalanx" />
   <meta name="twitter:description" content="How a Spartan Phalanx engagement proceeds: assess, plan, implement and verify, then sustain. Findings are tested, documented, and left with the team." />
   <meta name="twitter:image" content="https://spartanphalanx.com/assets/og.png" />
-  <meta name="theme-color" content="#1a1410" />
+  <meta name="theme-color" content="#f4efe6" />
   <script>
     (function () {
       var saved = null;
       try { saved = localStorage.getItem("spartanphalanx-theme"); } catch (e) {}
       var themes = { light: 1, dark: 1, green: 1, "light-green": 1, "dark-green": 1, blue: 1, "light-blue": 1 };
-      document.documentElement.setAttribute("data-theme", themes[saved] ? saved : "dark");
+      var colors = { light: "#f4efe6", dark: "#1a1410", green: "#dceadf", "light-green": "#e7f2ea", "dark-green": "#0f1f18", blue: "#16324f", "light-blue": "#e7f1f8" };
+      var name = themes[saved] ? saved : "light";
+      document.documentElement.setAttribute("data-theme", name);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta && colors[name]) meta.setAttribute("content", colors[name]);
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -37,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=1.0.11" />
+  <link rel="stylesheet" href="assets/site.css?v=1.0.11-2" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -61,8 +65,8 @@
         <div class="settings-panel" id="settings-panel" hidden>
           <p class="settings-label" id="settings-label">Appearance</p>
           <div class="theme-list" role="radiogroup" aria-labelledby="settings-label">
-            <button type="button" role="radio" data-theme="light" aria-checked="false">Light</button>
-            <button type="button" role="radio" data-theme="dark" aria-checked="true">Dark</button>
+            <button type="button" role="radio" data-theme="light" aria-checked="true">Light</button>
+            <button type="button" role="radio" data-theme="dark" aria-checked="false">Dark</button>
             <button type="button" role="radio" data-theme="green" aria-checked="false">Green</button>
             <button type="button" role="radio" data-theme="light-green" aria-checked="false">Light green</button>
             <button type="button" role="radio" data-theme="dark-green" aria-checked="false">Dark green</button>
@@ -166,6 +170,15 @@
       </div>
     </section>
 
+    <section class="cta-band">
+      <div class="wrap">
+        <p class="eyebrow">Contact</p>
+        <h2>The facility assessment is a fixed engagement.</h2>
+        <p>The fee is paid in full before the visit is scheduled. Implementation, contract support, and hiring that follow the findings are agreed separately.</p>
+        <a class="btn primary" href="contact.html">Request a consultation</a>
+      </div>
+    </section>
+
   </main>
 
   <footer class="site-foot">
@@ -183,6 +196,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/site.js?v=1.0.11"></script>
+  <script src="assets/site.js?v=1.0.11-2"></script>
 </body>
 </html>

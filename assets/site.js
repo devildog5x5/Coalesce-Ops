@@ -34,10 +34,12 @@
     settingsToggle.setAttribute("aria-expanded", "false");
   }
 
-  function applyTheme(name) {
-    if (!themes[name]) name = "dark";
+  function applyTheme(name, persist) {
+    if (!themes[name]) name = "light";
     document.documentElement.setAttribute("data-theme", name);
-    try { localStorage.setItem("spartanphalanx-theme", name); } catch (e) {}
+    if (persist) {
+      try { localStorage.setItem("spartanphalanx-theme", name); } catch (e) {}
+    }
     var themeColor = getComputedStyle(document.documentElement).getPropertyValue("--theme-color").trim();
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta && themeColor) meta.setAttribute("content", themeColor);
@@ -73,7 +75,7 @@
     });
     themeButtons.forEach(function (button) {
       button.addEventListener("click", function () {
-        applyTheme(button.getAttribute("data-theme"));
+        applyTheme(button.getAttribute("data-theme"), true);
       });
     });
   }
@@ -98,5 +100,5 @@
     return;
   }
 
-  applyTheme(document.documentElement.getAttribute("data-theme") || "dark");
+  applyTheme(document.documentElement.getAttribute("data-theme") || "light", false);
 })();

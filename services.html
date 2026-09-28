@@ -23,13 +23,17 @@
   <meta name="twitter:title" content="Services — Spartan Phalanx" />
   <meta name="twitter:description" content="IT operations, security operations, security architecture, ISO readiness, penetration testing, and infrastructure, held as one practice." />
   <meta name="twitter:image" content="https://spartanphalanx.com/assets/og.png" />
-  <meta name="theme-color" content="#1a1410" />
+  <meta name="theme-color" content="#f4efe6" />
   <script>
     (function () {
       var saved = null;
       try { saved = localStorage.getItem("spartanphalanx-theme"); } catch (e) {}
       var themes = { light: 1, dark: 1, green: 1, "light-green": 1, "dark-green": 1, blue: 1, "light-blue": 1 };
-      document.documentElement.setAttribute("data-theme", themes[saved] ? saved : "dark");
+      var colors = { light: "#f4efe6", dark: "#1a1410", green: "#dceadf", "light-green": "#e7f2ea", "dark-green": "#0f1f18", blue: "#16324f", "light-blue": "#e7f1f8" };
+      var name = themes[saved] ? saved : "light";
+      document.documentElement.setAttribute("data-theme", name);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta && colors[name]) meta.setAttribute("content", colors[name]);
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
@@ -37,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=1.0.11" />
+  <link rel="stylesheet" href="assets/site.css?v=1.0.11-2" />
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -61,8 +65,8 @@
         <div class="settings-panel" id="settings-panel" hidden>
           <p class="settings-label" id="settings-label">Appearance</p>
           <div class="theme-list" role="radiogroup" aria-labelledby="settings-label">
-            <button type="button" role="radio" data-theme="light" aria-checked="false">Light</button>
-            <button type="button" role="radio" data-theme="dark" aria-checked="true">Dark</button>
+            <button type="button" role="radio" data-theme="light" aria-checked="true">Light</button>
+            <button type="button" role="radio" data-theme="dark" aria-checked="false">Dark</button>
             <button type="button" role="radio" data-theme="green" aria-checked="false">Green</button>
             <button type="button" role="radio" data-theme="light-green" aria-checked="false">Light green</button>
             <button type="button" role="radio" data-theme="dark-green" aria-checked="false">Dark green</button>
@@ -100,6 +104,7 @@
             <div>
               <h3>IT operations</h3>
               <p>Stable platforms, maintained runbooks, change control that is observed, and monitoring directed to the responsible owner.</p>
+              <p class="covers">Platforms · Runbooks · Change control · Monitoring</p>
             </div>
           </li>
           <li id="secops">
@@ -107,6 +112,7 @@
             <div>
               <h3>Security operations</h3>
               <p>Detection and response that connect the security operations center, information technology, and leadership, so alerts result in decisions.</p>
+              <p class="covers">Detection · Response · The security operations center · Leadership</p>
             </div>
           </li>
           <li id="architecture">
@@ -114,6 +120,7 @@
             <div>
               <h3>Security architecture</h3>
               <p>Identity, network, cloud, and endpoint controls designed as one posture.</p>
+              <p class="covers">Identity · Network · Cloud · Endpoint</p>
             </div>
           </li>
           <li id="iso">
@@ -121,6 +128,7 @@
             <div>
               <h3>ISO readiness</h3>
               <p>ISO/IEC 27001 and related control work treated as an operating requirement: evidence that can be produced, owners who understand their duties, and gaps addressed before assessment.</p>
+              <p class="covers">ISO/IEC 27001 · Evidence · Owners · Gaps before assessment</p>
             </div>
           </li>
           <li id="testing">
@@ -128,6 +136,7 @@
             <div>
               <h3>Penetration testing</h3>
               <p>Testing informed by adversary methods, focused on the paths that matter, followed by remediation until findings are closed and retested.</p>
+              <p class="covers">Adversary methods · Paths that matter · Remediation · Retest</p>
             </div>
           </li>
           <li id="infrastructure">
@@ -135,9 +144,20 @@
             <div>
               <h3>Infrastructure</h3>
               <p>On-premises, hybrid, and cloud foundations with defined capacity, resilience, backup, and recovery.</p>
+              <p class="covers">On-premises · Hybrid · Cloud · Backup and recovery</p>
             </div>
           </li>
         </ol>
+        <p class="section-link"><a href="contact.html">Request a consultation</a></p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <p class="eyebrow">Contact</p>
+        <h2>Describe the matter.</h2>
+        <p>Operations, security operations, an ISO timeline, or an assessment. We will reply with a defined next step.</p>
+        <a class="btn primary" href="contact.html">Request a consultation</a>
       </div>
     </section>
 
@@ -158,6 +178,6 @@
       </div>
     </div>
   </footer>
-  <script src="assets/site.js?v=1.0.11"></script>
+  <script src="assets/site.js?v=1.0.11-2"></script>
 </body>
 </html>
