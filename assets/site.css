@@ -1,140 +1,140 @@
-html[data-theme="dark"] {
-  --paper: #12100e;
-  --surface: #1c1814;
-  --ink: #f2ebe3;
-  --ink-soft: #d2c6b6;
-  --muted: #a89884;
-  --line: #3a322a;
-  --accent: #e0c48a;
-  --accent-hot: #f3e2c0;
-  --btn: #9b2f2a;
-  --btn-text: #fff8f4;
-  --header: rgba(18, 16, 14, 0.92);
-  --card: #1c1814;
-  --band: #1a1612;
-  --foot: #0c0a09;
-  --foot-ink: #f2ebe3;
-  --foot-muted: #b3a492;
-  --foot-accent: #e0c48a;
-  --drawer: #2c261f;
-  --drawer-line: #a68448;
-  --theme-color: #1a1410;
-}
-
 :root,
 html[data-theme="light"] {
-  --paper: #f4efe6;
-  --surface: #fffdf8;
-  --ink: #1a1612;
-  --ink-soft: #3a332c;
-  --muted: #5c534a;
-  --line: #ddd2c2;
-  --accent: #6a4218;
-  --accent-hot: #1a1612;
-  --btn: #9b2f2a;
-  --btn-text: #fff8f4;
-  --header: rgba(244, 239, 230, 0.94);
-  --card: #fffdf8;
-  --band: #efe6d8;
-  --foot: #1c1a17;
+  --paper: #f3efe8;
+  --surface: #fbf8f3;
+  --ink: #1a1714;
+  --ink-soft: #3a342e;
+  --muted: #6d655c;
+  --line: #ddd4c8;
+  --accent: #9a3f2a;
+  --accent-hot: #7c3120;
+  --btn: #1a1714;
+  --btn-text: #f6f1ea;
+  --header: rgba(243, 239, 232, 0.92);
+  --card: #fbf8f3;
+  --band: #e9e2d6;
+  --foot: #1a1714;
   --foot-ink: #f6f1ea;
   --foot-muted: #c9bfb2;
-  --foot-accent: #e0c48a;
-  --drawer: #fffdf8;
-  --drawer-line: #6a4218;
-  --theme-color: #f4efe6;
+  --foot-accent: #e08a72;
+  --drawer: #fbf8f3;
+  --drawer-line: #9a3f2a;
+  --theme-color: #f3efe8;
+}
+
+html[data-theme="dark"] {
+  --paper: #12100e;
+  --surface: #1b1815;
+  --ink: #f4efe8;
+  --ink-soft: #ddd4c8;
+  --muted: #a89d90;
+  --line: #322c26;
+  --accent: #e08a72;
+  --accent-hot: #f0b5a4;
+  --btn: #e08a72;
+  --btn-text: #1a1210;
+  --header: rgba(18, 16, 14, 0.92);
+  --card: #1b1815;
+  --band: #1b1815;
+  --foot: #0c0b0a;
+  --foot-ink: #f4efe8;
+  --foot-muted: #a89d90;
+  --foot-accent: #e08a72;
+  --drawer: #241f1b;
+  --drawer-line: #e08a72;
+  --theme-color: #12100e;
 }
 
 html[data-theme="green"] {
-  --paper: #dceadf;
-  --surface: #f3faf5;
-  --ink: #14241c;
-  --ink-soft: #24382d;
-  --muted: #3e5c4c;
-  --line: #b7d0c0;
-  --accent: #14382e;
-  --accent-hot: #0d241c;
-  --btn: #1b4d3e;
-  --btn-text: #f4faf6;
-  --header: rgba(220, 234, 223, 0.94);
-  --card: #f3faf5;
-  --band: #cfe3d4;
-  --foot: #10241c;
-  --foot-ink: #f4faf6;
-  --foot-muted: #b7cfc2;
-  --foot-accent: #c8e8d6;
-  --drawer: #f7fbf8;
-  --drawer-line: #1b4d3e;
-  --theme-color: #dceadf;
+  --paper: #1f6b45;
+  --surface: #278556;
+  --ink: #f4fbf6;
+  --ink-soft: #d7eadf;
+  --muted: #d5eadc;
+  --line: #4d9a72;
+  --accent: #d7f0e3;
+  --accent-hot: #ffffff;
+  --btn: #d7f0e3;
+  --btn-text: #0e2a1c;
+  --header: rgba(31, 107, 69, 0.94);
+  --card: #278556;
+  --band: #1a5c3b;
+  --foot: #0e2a1c;
+  --foot-ink: #f4fbf6;
+  --foot-muted: #c5dfd0;
+  --foot-accent: #d7f0e3;
+  --drawer: #278556;
+  --drawer-line: #d7f0e3;
+  --theme-color: #1f6b45;
 }
 
 html[data-theme="light-green"] {
-  --paper: #e7f2ea;
-  --surface: #f7fbf8;
-  --ink: #1a2e24;
+  --paper: #e7f3ea;
+  --surface: #f4fbf6;
+  --ink: #14241c;
   --ink-soft: #24382d;
-  --muted: #3f5c4e;
-  --line: #c9ddd0;
-  --accent: #1e5340;
-  --accent-hot: #14241c;
-  --btn: #2a6b52;
-  --btn-text: #f7fbf8;
-  --header: rgba(231, 242, 234, 0.94);
-  --card: #f7fbf8;
-  --band: #d7e8dc;
+  --muted: #4d6558;
+  --line: #c5dccb;
+  --accent: #1b6b45;
+  --accent-hot: #145536;
+  --btn: #1b6b45;
+  --btn-text: #f4fbf6;
+  --header: rgba(231, 243, 234, 0.94);
+  --card: #f4fbf6;
+  --band: #d7eadc;
   --foot: #143028;
   --foot-ink: #f4fbf6;
   --foot-muted: #b7cfc2;
   --foot-accent: #c8e8d6;
-  --drawer: #ffffff;
-  --drawer-line: #1e5340;
-  --theme-color: #e7f2ea;
+  --drawer: #f4fbf6;
+  --drawer-line: #1b6b45;
+  --theme-color: #e7f3ea;
 }
 
 html[data-theme="dark-green"] {
-  --paper: #0f1f18;
-  --surface: #163026;
+  --paper: #0e1c16;
+  --surface: #15281f;
   --ink: #e7f3ec;
-  --ink-soft: #c3d8cc;
-  --muted: #9bb8aa;
+  --ink-soft: #c5dccd;
+  --muted: #8eaa9c;
   --line: #2a4638;
   --accent: #8fceb0;
   --accent-hot: #c8e8d6;
   --btn: #2f6b56;
   --btn-text: #f4faf6;
-  --header: rgba(15, 31, 24, 0.94);
-  --card: #163026;
+  --header: rgba(14, 28, 22, 0.94);
+  --card: #15281f;
   --band: #12241c;
   --foot: #081410;
   --foot-ink: #f4faf6;
   --foot-muted: #8eaa9c;
-  --foot-accent: #c8e8d6;
-  --drawer: #1c3a2e;
+  --foot-accent: #8fceb0;
+  --drawer: #1c382c;
   --drawer-line: #8fceb0;
-  --theme-color: #0f1f18;
+  --theme-color: #0e1c16;
 }
 
 html[data-theme="blue"] {
-  --paper: #16324f;
-  --surface: #1c3d5e;
-  --ink: #f4f7fb;
-  --ink-soft: #d5e0ea;
-  --muted: #c5d5e4;
-  --line: #3d6288;
+  --paper: #1f5c96;
+  --surface: #2770b0;
+  --ink: #f4f8fc;
+  --ink-soft: #d7e6f4;
+  --muted: #d5e6f5;
+  --line: #4d8bc4;
   --accent: #d6ebfa;
   --accent-hot: #ffffff;
   --btn: #d6ebfa;
-  --btn-text: #0e2438;
-  --header: rgba(22, 50, 79, 0.94);
-  --card: #1c3d5e;
-  --band: #12283f;
-  --foot: #0c1c2e;
-  --foot-ink: #f4f7fb;
-  --foot-muted: #b7c9d8;
+  --btn-text: #0e2a44;
+  --header: rgba(31, 92, 150, 0.94);
+  --card: #2770b0;
+  --band: #1a5084;
+  --foot: #0e2a44;
+  --foot-ink: #f4f8fc;
+  --foot-muted: #c5d7e8;
   --foot-accent: #d6ebfa;
-  --drawer: #21486e;
+  --drawer: #2770b0;
   --drawer-line: #d6ebfa;
-  --theme-color: #16324f;
+  --theme-color: #1f5c96;
 }
 
 html[data-theme="light-blue"] {
@@ -142,32 +142,33 @@ html[data-theme="light-blue"] {
   --surface: #f5fafc;
   --ink: #152433;
   --ink-soft: #2c4154;
-  --muted: #3e5670;
+  --muted: #5a7082;
   --line: #c5d7e6;
-  --accent: #163a66;
-  --accent-hot: #0e2438;
+  --accent: #1d4e89;
+  --accent-hot: #163a66;
   --btn: #1d4e89;
   --btn-text: #f5fafc;
   --header: rgba(231, 241, 248, 0.94);
   --card: #f5fafc;
-  --band: #d4e4f0;
+  --band: #d5e6f2;
   --foot: #152433;
   --foot-ink: #f5fafc;
   --foot-muted: #b7c9d8;
-  --foot-accent: #d6ebfa;
-  --drawer: #ffffff;
+  --foot-accent: #9fd0f2;
+  --drawer: #f5fafc;
   --drawer-line: #1d4e89;
   --theme-color: #e7f1f8;
 }
 
 :root {
   --max: 1120px;
-  --serif: "Cinzel", "Times New Roman", serif;
-  --sans: "Source Sans 3", "Segoe UI", sans-serif;
+  --serif: "Newsreader", "Iowan Old Style", Palatino, serif;
+  --sans: "Outfit", "Segoe UI", sans-serif;
   color-scheme: light;
 }
 html[data-theme="dark"],
 html[data-theme="dark-green"],
+html[data-theme="green"],
 html[data-theme="blue"] { color-scheme: dark; }
 
 *,
@@ -247,8 +248,8 @@ a:hover { color: var(--accent-hot); }
 .brand-name {
   font-family: var(--serif);
   font-weight: 600;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
 }
 .brand-legal {
   margin-top: 2px;
@@ -425,12 +426,13 @@ a:hover { color: var(--accent-hot); }
   text-transform: uppercase;
   color: var(--accent);
 }
-h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: 0.01em; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.02em; }
 .hero h1 {
   margin: 0;
-  max-width: 12ch;
-  font-size: clamp(2.8rem, 7vw, 5.1rem);
-  line-height: 0.98;
+  max-width: 11ch;
+  font-size: clamp(3.2rem, 7vw, 5.4rem);
+  line-height: 0.92;
+  font-weight: 500;
   color: var(--ink);
 }
 .motto {
@@ -438,10 +440,10 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: 0.01em
   max-width: 22em;
   font-family: var(--serif);
   font-size: clamp(1.2rem, 2.1vw, 1.55rem);
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: 0.02em;
-  color: var(--accent);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--ink-soft);
 }
 .lede {
   margin: 18px 0 0;
@@ -534,7 +536,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: 0.01em
   padding: 22px 22px 24px;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--btn);
+  border-top: 3px solid var(--accent);
 }
 .card h3 a {
   color: inherit;
@@ -560,7 +562,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: 0.01em
   padding: 20px 18px 22px;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--btn);
+  border-top: 3px solid var(--accent);
 }
 .record h3 {
   margin: 0 0 8px;
@@ -570,7 +572,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: 0.01em
 
 .process {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   margin: 8px 0 0;
   border-top: 1px solid var(--line);
 }
@@ -609,7 +611,7 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 600; letter-spacing: 0.01em
   padding: 22px 20px 24px;
   background: var(--surface);
   border: 1px solid var(--line);
-  border-top: 3px solid var(--btn);
+  border-top: 3px solid var(--accent);
 }
 .contact-points h3 { margin: 0 0 8px; font-size: 1.2rem; }
 .contact-points p { margin: 0; color: var(--ink-soft); }

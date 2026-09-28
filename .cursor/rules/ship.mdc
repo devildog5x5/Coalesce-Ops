@@ -3,25 +3,25 @@ description: Pack a versioned Hostinger zip, publish it on GitHub Releases, and 
 alwaysApply: true
 ---
 
-# Ship (Spartan Phalanx)
+# Ship (Coalesce Ops)
 
 **Always ship without asking** after site or packaging changes, or when the user asks for a zip / release / Hostinger drop.
 
 ## Zip filename
 
-Never ship `SpartanPhalanx.zip`. Version from `VERSION` goes **at the end**:
+Never ship `CoalesceOps.zip`. Version from `VERSION` goes **at the end**:
 
-- Correct: `SpartanPhalanx-1.0.0.zip`
+- Correct: `CoalesceOps-1.0.0.zip`
 - Wrong: unversioned names, or a git hash in the filename
 
-Pack: `powershell -File .\build_site_zip.ps1` → `installers\SpartanPhalanx-<x.y.z>.zip`. Zip root is `public_html` (`index.html`, `assets/`, `LICENSE`). Never a nested folder. Do not commit `installers/`.
+Pack: `powershell -File .\build_site_zip.ps1` → `installers\CoalesceOps-<x.y.z>.zip`. Zip root is `public_html` (`index.html`, `assets/`, `LICENSE`). Entry names use forward slashes. Never a nested folder. Do not commit `installers/`.
 
 ## GitHub Release (required)
 
 The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 
-1. Bump `VERSION` before a new ship. Put that same version in the footer as plain text: `Spartan Phalanx vX.Y.Z`. Commit and `git push` to `main`.
-2. Tag `vX.Y.Z` and `gh release create`, uploading `SpartanPhalanx-X.Y.Z.zip`.
+1. Bump `VERSION` before a new ship. Put that same version in the footer as plain text: `Coalesce Ops vX.Y.Z`. Commit and `git push` to `main`.
+2. Tag `vX.Y.Z` and `gh release create`, uploading `CoalesceOps-X.Y.Z.zip`.
 3. Verify the asset URL with `gh release view`. Never invent `releases/download/...` links.
 4. Put that verbatim HTTPS URL in README. Commit and push the README.
 
@@ -29,6 +29,6 @@ The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 
 | Line | Content |
 |------|---------|
-| **Zip** | Full URL to `SpartanPhalanx-X.Y.Z.zip` |
-| **Release page** | `https://github.com/devildog5x5/SpartanPhalanx/releases/tag/vX.Y.Z` |
+| **Zip** | Full URL to `CoalesceOps-X.Y.Z.zip` |
+| **Release page** | `https://github.com/devildog5x5/Coalesce-Ops/releases/tag/vX.Y.Z` |
 | **WinSCP** | Unzip → upload contents into `public_html` |

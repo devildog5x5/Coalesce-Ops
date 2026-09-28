@@ -38,7 +38,7 @@
     if (!themes[name]) name = "light";
     document.documentElement.setAttribute("data-theme", name);
     if (persist) {
-      try { localStorage.setItem("spartanphalanx-theme", name); } catch (e) {}
+      try { localStorage.setItem("coalesceops-theme", name); } catch (e) {}
     }
     var themeColor = getComputedStyle(document.documentElement).getPropertyValue("--theme-color").trim();
     var meta = document.querySelector('meta[name="theme-color"]');

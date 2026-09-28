@@ -1,4 +1,4 @@
-# Build SpartanPhalanx-<version>.zip for Hostinger public_html.
+# Build CoalesceOps-<version>.zip for Hostinger public_html.
 # Entry names use forward slashes so Linux unzip (Hostinger) does not
 # treat paths such as assets\favicon.svg as literal filenames.
 $ErrorActionPreference = "Stop"
@@ -17,7 +17,7 @@ if ($Version -notmatch '^\d+\.\d+\.\d+$') {
 
 $Out = Join-Path $Root "installers"
 $Stage = Join-Path $Root "build\sitedrop"
-$ZipName = "SpartanPhalanx-$Version.zip"
+$ZipName = "CoalesceOps-$Version.zip"
 $Zip = Join-Path $Out $ZipName
 
 New-Item -ItemType Directory -Force -Path $Out | Out-Null
@@ -31,7 +31,7 @@ Copy-Item -Path (Join-Path $Root "robots.txt") -Destination $Stage
 Copy-Item -Path (Join-Path $Root "sitemap.xml") -Destination $Stage
 Copy-Item -Path (Join-Path $Root "assets") -Destination (Join-Path $Stage "assets") -Recurse
 
-Get-ChildItem -Path $Out -Filter "SpartanPhalanx-*.zip" -ErrorAction SilentlyContinue | Remove-Item -Force
+Get-ChildItem -Path $Out -Filter "CoalesceOps-*.zip" -ErrorAction SilentlyContinue | Remove-Item -Force
 
 $archive = [System.IO.Compression.ZipFile]::Open($Zip, [System.IO.Compression.ZipArchiveMode]::Create)
 try {

@@ -1,5 +1,5 @@
-# Spartan Phalanx — https://spartanphalanx.com
+# Coalesce Ops — https://coalesceops.com
 User-agent: *
 Allow: /
 
-Sitemap: https://spartanphalanx.com/sitemap.xml
+Sitemap: https://coalesceops.com/sitemap.xml
