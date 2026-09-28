@@ -5,38 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Spartan Phalanx — Ops, SecOps &amp; Infrastructure Consulting</title>
   <meta name="description" content="Spartan Phalanx is ops, SecOps, and IT infrastructure consulting — ISO readiness, penetration testing, security architecture, and hardened operations for teams that hold the line under pressure." />
+  <meta name="keywords" content="Spartan Phalanx, operations consulting, SecOps, security operations, IT infrastructure, ISO 27001, penetration testing, security architecture" />
+  <meta name="author" content="Robert Foster" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://spartanphalanx.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Spartan Phalanx" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Spartan Phalanx — Ops, SecOps &amp; Infrastructure Consulting" />
+  <meta property="og:description" content="Spartan Phalanx is ops, SecOps, and IT infrastructure consulting — ISO readiness, penetration testing, security architecture, and hardened operations for teams that hold the line under pressure." />
+  <meta property="og:url" content="https://spartanphalanx.com/" />
+  <meta property="og:image" content="https://spartanphalanx.com/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Spartan Phalanx — operations, security, and infrastructure consulting" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spartan Phalanx — Ops, SecOps &amp; Infrastructure Consulting" />
+  <meta name="twitter:description" content="Spartan Phalanx is ops, SecOps, and IT infrastructure consulting — ISO readiness, penetration testing, security architecture, and hardened operations for teams that hold the line under pressure." />
+  <meta name="twitter:image" content="https://spartanphalanx.com/assets/og.png" />
   <meta name="theme-color" content="#1a1410" />
   <script>
     (function () {
-      var saved = localStorage.getItem("spartanphalanx-theme");
+      var saved = null;
+      try { saved = localStorage.getItem("spartanphalanx-theme"); } catch (e) {}
       var themes = { light: 1, dark: 1, green: 1, "light-green": 1, "dark-green": 1, blue: 1, "light-blue": 1 };
       document.documentElement.setAttribute("data-theme", themes[saved] ? saved : "dark");
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=1.0.10" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=1.0.11" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Spartan Phalanx",
+      "url": "https://spartanphalanx.com/",
+      "email": "rmf@SpartanPhalanx.com",
+      "telephone": "+1-801-319-1061",
+      "description": "Operations, security operations, and infrastructure consulting.",
+      "founder": {
+        "@type": "Person",
+        "name": "Robert Foster"
+      }
+    }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-
   <header class="top">
-    <a class="brand" href="./">
-      <img src="assets/favicon.svg" width="28" height="28" alt="" />
-      <span>Spartan Phalanx</span>
+    <a class="brand" href="index.html">
+      <img src="assets/favicon.svg" width="36" height="36" alt="" />
+      <span class="brand-text">
+        <span class="brand-name">Spartan Phalanx</span>
+        <span class="brand-legal">© 2026 Robert Foster</span>
+      </span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#practice">Practice</a>
-      <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
-      <a href="#engagements">Engagements</a>
-      <a class="nav-cta" href="#contact">Contact</a>
+      <a href="practice.html">Practice</a>
+      <a href="services.html">Services</a>
+      <a href="method.html">Method</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
     </nav>
     <div class="header-tools">
       <div class="settings">
-        <button type="button" class="settings-btn" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel">Settings</button>
+        <button type="button" class="settings-btn" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel">Appearance</button>
         <div class="settings-panel" id="settings-panel" hidden>
           <p class="settings-label" id="settings-label">Appearance</p>
           <div class="theme-list" role="radiogroup" aria-labelledby="settings-label">
@@ -55,195 +91,128 @@
       </button>
     </div>
   </header>
-
   <div class="nav-drawer" id="nav-drawer" hidden>
-    <a href="#practice">Practice</a>
-    <a href="#services">Services</a>
-    <a href="#approach">Approach</a>
-    <a href="#engagements">Engagements</a>
-    <a href="#contact">Contact</a>
+      <a href="practice.html">Practice</a>
+      <a href="services.html">Services</a>
+      <a href="method.html">Method</a>
+      <a href="contact.html">Contact</a>
   </div>
 
   <main id="main">
     <section class="hero">
-      <div class="hero-veil" aria-hidden="true"></div>
-      <div class="hero-inner">
+      <div class="wrap">
         <p class="eyebrow">Operations · Security · Infrastructure</p>
         <h1>Spartan Phalanx</h1>
         <p class="motto">Shoulder to shoulder. Shield to shield.</p>
         <p class="lede">We come to your facility, examine how the operation is actually run, and tell you what must change for it to last.</p>
         <div class="hero-cta">
-          <a class="btn primary" href="#contact">Request a consultation</a>
-          <a class="btn ghost" href="#practice">Our approach</a>
+          <a class="btn primary" href="contact.html">Request a consultation</a>
+          <a class="btn ghost" href="practice.html">The practice</a>
         </div>
       </div>
     </section>
 
-    <section class="band" id="work">
-      <div class="wrap narrow">
+    <section class="band alt">
+      <div class="wrap split">
         <h2>What we do</h2>
-        <p>
-          We come on site and review the operation as it is actually run. The review covers
-          the systems we can reach, the people who operate them, and the leadership that
-          owns the decisions.
-        </p>
-        <p>
-          Security, quality, and infrastructure are examined as one system, from hardware and
-          networks through cloud and data. The work is informed by directing technology and
-          field teams in medical devices under FDA and ISO requirements, in energy and
-          telecommunications networks, and in security platforms, and by service in the
-          United States Marine Corps.
-        </p>
-        <p>
-          You receive a direct account of what needs attention and what must change for the
-          operation to be sustainable. Where the constraint is capacity, we help you add it —
-          by contract or by hire — so the correction is not left as a finding with no one to
-          carry it out.
-        </p>
-        <p>
-          The facility assessment is a fixed engagement. The fee is paid in full before the
-          visit is scheduled. Implementation, contract support, and hiring that follow the
-          findings are agreed separately.
-        </p>
+        <div class="prose">
+          <p>We come on site and review the operation as it is actually run. The review covers the systems we can reach, the people who operate them, and the leadership that owns the decisions.</p>
+          <p>Security, quality, and infrastructure are examined as one system, from hardware and networks through cloud and data. The work is informed by directing technology and field teams in medical devices under FDA and ISO requirements, in energy and telecommunications networks, and in security platforms, and by service in the United States Marine Corps.</p>
+          <p class="section-link"><a href="practice.html">Read the practice</a></p>
+        </div>
       </div>
     </section>
 
-    <section class="band alt" id="practice">
-      <div class="wrap narrow">
-        <h2>The practice</h2>
-        <p>
-          The classical phalanx held because the line closed shoulder to shoulder, each shield
-          covering the position beside it. A gap was a failure of the formation, not of an
-          individual. Spartan Phalanx applies that discipline to modern information technology:
-          operations, security operations, and the infrastructure those functions share.
-        </p>
-        <p>
-          Engagements are conducted with your team. We design the posture, test it, strengthen
-          it, and demonstrate that it holds.
-        </p>
+    <section class="facts" aria-label="How an engagement proceeds">
+      <div class="wrap facts-grid">
+        <article>
+          <p class="num">01</p>
+          <h2>Assess</h2>
+          <p>An on-site review of systems, personnel, and leadership, with a written account of what needs attention.</p>
+        </article>
+        <article>
+          <p class="num">02</p>
+          <h2>Plan</h2>
+          <p>A prioritized sequence to strengthen, detect, document, and test according to risk.</p>
+        </article>
+        <article>
+          <p class="num">03</p>
+          <h2>Sustain</h2>
+          <p>A retainer or follow-on cycle as the environment and the threat landscape change.</p>
+        </article>
       </div>
     </section>
 
-    <section class="band" id="services">
+    <section class="band">
+      <div class="wrap split">
+        <h2>Why the approach holds</h2>
+        <div class="prose">
+          <p>Operations without security operations leaves failures undetected. Security operations without sound infrastructure investigates symptoms rather than causes. Compliance work without both produces records without protection.</p>
+          <p>These disciplines stay aligned, so a finding in one area becomes a correction in the others. The result is overlapping coverage under real operating conditions.</p>
+          <p class="section-link"><a href="method.html">Read the method</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band alt">
       <div class="wrap">
         <header class="section-head">
           <h2>Services</h2>
           <p>A single practice across operations, security, and infrastructure.</p>
         </header>
-        <ul class="service-list">
-          <li>
+        <div class="cards">
+          <article class="card">
+            <p class="num">01</p>
             <h3>IT operations</h3>
             <p>Stable platforms, maintained runbooks, change control that is observed, and monitoring directed to the responsible owner.</p>
-          </li>
-          <li>
+          </article>
+          <article class="card">
+            <p class="num">02</p>
             <h3>Security operations</h3>
             <p>Detection and response that connect the security operations center, information technology, and leadership, so alerts result in decisions.</p>
-          </li>
-          <li>
+          </article>
+          <article class="card">
+            <p class="num">03</p>
             <h3>Security architecture</h3>
             <p>Identity, network, cloud, and endpoint controls designed as one posture.</p>
-          </li>
-          <li>
+          </article>
+          <article class="card">
+            <p class="num">04</p>
             <h3>ISO readiness</h3>
-            <p>ISO/IEC 27001 and related control work treated as an operating requirement: evidence that can be produced, owners who understand their duties, and gaps addressed before assessment.</p>
-          </li>
-          <li>
+            <p>ISO/IEC 27001 and related control work treated as an operating requirement, with evidence that can be produced before assessment.</p>
+          </article>
+          <article class="card">
+            <p class="num">05</p>
             <h3>Penetration testing</h3>
             <p>Testing informed by adversary methods, focused on the paths that matter, followed by remediation until findings are closed and retested.</p>
-          </li>
-          <li>
+          </article>
+          <article class="card">
+            <p class="num">06</p>
             <h3>Infrastructure</h3>
             <p>On-premises, hybrid, and cloud foundations with defined capacity, resilience, backup, and recovery.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="band alt" id="approach">
-      <div class="wrap">
-        <header class="section-head">
-          <h2>Why the approach holds</h2>
-          <p>The result is overlapping coverage under real operating conditions.</p>
-        </header>
-        <div class="efficacy">
-          <article>
-            <h3>Aligned disciplines</h3>
-            <p>
-              Operations without security operations leaves failures undetected. Security
-              operations without sound infrastructure investigates symptoms rather than causes.
-              Compliance work without both produces records without protection. These disciplines
-              stay aligned, so a finding in one area becomes a correction in the others.
-            </p>
-          </article>
-          <article>
-            <h3>Tested on your schedule</h3>
-            <p>
-              Penetration testing and tabletop exercises apply pressure deliberately. The
-              organization sees which controls fail, which signals arrive late, and where
-              ownership is unclear, before an incident sets the timeline.
-            </p>
-          </article>
-          <article>
-            <h3>Evidence</h3>
-            <p>
-              Readiness is documented: configurations, logs, tickets, restoration tests, and
-              retest results. We record what held, what failed, and what changed, so leadership
-              and assessors receive the same account the operators use.
-            </p>
-          </article>
-          <article>
-            <h3>Work that remains</h3>
-            <p>
-              The engagement establishes procedures, ownership, and operating habits your team
-              can maintain after the consultants depart.
-            </p>
           </article>
         </div>
+        <p class="section-link"><a href="services.html">Read the services</a></p>
       </div>
     </section>
 
-    <section class="band" id="engagements">
-      <div class="wrap narrow">
-        <h2>How an engagement proceeds</h2>
-        <ol class="steps">
-          <li>
-            <strong>Assess</strong>
-            <span>An on-site review of systems, personnel, and leadership, with a written account of what needs attention.</span>
-          </li>
-          <li>
-            <strong>Plan</strong>
-            <span>A prioritized sequence to strengthen, detect, document, and test according to risk.</span>
-          </li>
-          <li>
-            <strong>Implement and verify</strong>
-            <span>Execute the plan, assess or test, remediate, and retest until the posture holds.</span>
-          </li>
-          <li>
-            <strong>Sustain</strong>
-            <span>A retainer or follow-on cycle as the environment and the threat landscape change.</span>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="band contact" id="contact">
-      <div class="wrap narrow">
-        <h2>Contact</h2>
-        <p>
-          Describe the matter: operations, security operations, an ISO timeline, or an
-          assessment. We will reply with a defined next step.
-        </p>
-        <p class="contact-mail">
-          <a href="mailto:rmf@SpartanPhalanx.com">rmf@SpartanPhalanx.com</a>
-        </p>
-        <p class="contact-phone">
-          <a href="tel:+18013191061">801.319.1061</a>
-        </p>
-        <p class="fine">© 2026 Robert Foster · Spartan Phalanx v1.0.10</p>
-      </div>
-    </section>
   </main>
 
-  <script src="assets/site.js?v=1.0.10"></script>
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-row">
+        <div>
+          <p class="foot-name">Spartan Phalanx</p>
+          <p class="foot-legal">© 2026 Robert Foster</p>
+          <p class="foot-version">Spartan Phalanx v1.0.11</p>
+        </div>
+        <div class="foot-contact">
+          <p><a href="mailto:rmf@SpartanPhalanx.com">rmf@SpartanPhalanx.com</a></p>
+          <p><a href="tel:+18013191061">801.319.1061</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/site.js?v=1.0.11"></script>
 </body>
 </html>

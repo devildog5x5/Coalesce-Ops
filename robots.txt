@@ -1,0 +1,5 @@
+# Spartan Phalanx — https://spartanphalanx.com
+User-agent: *
+Allow: /
+
+Sitemap: https://spartanphalanx.com/sitemap.xml
