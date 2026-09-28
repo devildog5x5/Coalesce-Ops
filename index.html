@@ -3,45 +3,85 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Spartan Phalanx — Ops, SecOps &amp; Infrastructure Consulting</title>
-  <meta name="description" content="Spartan Phalanx is ops, SecOps, and IT infrastructure consulting — ISO readiness, penetration testing, security architecture, and hardened operations for teams that hold the line under pressure." />
-  <meta name="theme-color" content="#1a1410" />
+  <title>Coalesce Ops — Analyze, review, and align the flow</title>
+  <meta name="description" content="Coalesce Ops analyzes, reviews, and aligns products, processes, and AI so the flow is smoother, without adding headcount." />
+  <meta name="keywords" content="Coalesce Ops, analyze review align, products and processes, AI advantage, AI governance, smoother flow, no added headcount, SOC 2, PCI" />
+  <meta name="author" content="Robert Foster" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://coalesceops.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Coalesce Ops" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Coalesce Ops — Analyze, review, and align the flow" />
+  <meta property="og:description" content="Coalesce Ops analyzes, reviews, and aligns products, processes, and AI so the flow is smoother, without adding headcount." />
+  <meta property="og:url" content="https://coalesceops.com/" />
+  <meta property="og:image" content="https://coalesceops.com/assets/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Coalesce Ops — analyze, review, and align the flow" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Coalesce Ops — Analyze, review, and align the flow" />
+  <meta name="twitter:description" content="Coalesce Ops analyzes, reviews, and aligns products, processes, and AI so the flow is smoother, without adding headcount." />
+  <meta name="twitter:image" content="https://coalesceops.com/assets/og.png" />
+  <meta name="theme-color" content="#f3efe8" />
   <script>
     (function () {
-      var saved = localStorage.getItem("spartanphalanx-theme");
+      var saved = null;
+      try { saved = localStorage.getItem("coalesceops-theme"); } catch (e) {}
       var themes = { light: 1, dark: 1, green: 1, "light-green": 1, "dark-green": 1, blue: 1, "light-blue": 1 };
-      document.documentElement.setAttribute("data-theme", themes[saved] ? saved : "dark");
+      var colors = { light: "#f3efe8", dark: "#12100e", green: "#1f6b45", "light-green": "#e7f3ea", "dark-green": "#0e1c16", blue: "#1f5c96", "light-blue": "#e7f1f8" };
+      var name = themes[saved] ? saved : "light";
+      document.documentElement.setAttribute("data-theme", name);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta && colors[name]) meta.setAttribute("content", colors[name]);
     })();
   </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="assets/site.css?v=1.0.10" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Outfit:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/site.css?v=1.1.0" />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Coalesce Ops",
+      "url": "https://coalesceops.com/",
+      "email": "rmf@coalesceops.com",
+      "telephone": "+1-801-319-1061",
+      "description": "Coalesce Ops analyzes, reviews, and aligns products, processes, and AI so the flow is smoother, without adding headcount.",
+      "founder": {
+        "@type": "Person",
+        "name": "Robert Foster"
+      }
+    }
+  </script>
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
-
   <header class="top">
-    <a class="brand" href="./">
-      <img src="assets/favicon.svg" width="28" height="28" alt="" />
-      <span>Spartan Phalanx</span>
+    <a class="brand" href="index.html">
+      <img src="assets/favicon.svg" width="36" height="36" alt="" />
+      <span class="brand-text">
+        <span class="brand-name">Coalesce Ops</span>
+        <span class="brand-legal">© 2026 Robert Foster</span>
+      </span>
     </a>
     <nav class="nav" aria-label="Primary">
-      <a href="#practice">Practice</a>
-      <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
-      <a href="#engagements">Engagements</a>
-      <a class="nav-cta" href="#contact">Contact</a>
+      <a href="practice.html">Practice</a>
+      <a href="services.html">Services</a>
+      <a href="method.html">Method</a>
+      <a href="contact.html" class="nav-cta">Contact</a>
     </nav>
     <div class="header-tools">
       <div class="settings">
-        <button type="button" class="settings-btn" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel">Settings</button>
+        <button type="button" class="settings-btn" id="settings-toggle" aria-expanded="false" aria-controls="settings-panel">Appearance</button>
         <div class="settings-panel" id="settings-panel" hidden>
           <p class="settings-label" id="settings-label">Appearance</p>
           <div class="theme-list" role="radiogroup" aria-labelledby="settings-label">
-            <button type="button" role="radio" data-theme="light" aria-checked="false">Light</button>
-            <button type="button" role="radio" data-theme="dark" aria-checked="true">Dark</button>
+            <button type="button" role="radio" data-theme="light" aria-checked="true">Light</button>
+            <button type="button" role="radio" data-theme="dark" aria-checked="false">Dark</button>
             <button type="button" role="radio" data-theme="green" aria-checked="false">Green</button>
             <button type="button" role="radio" data-theme="light-green" aria-checked="false">Light green</button>
             <button type="button" role="radio" data-theme="dark-green" aria-checked="false">Dark green</button>
@@ -55,195 +95,147 @@
       </button>
     </div>
   </header>
-
   <div class="nav-drawer" id="nav-drawer" hidden>
-    <a href="#practice">Practice</a>
-    <a href="#services">Services</a>
-    <a href="#approach">Approach</a>
-    <a href="#engagements">Engagements</a>
-    <a href="#contact">Contact</a>
+      <a href="practice.html">Practice</a>
+      <a href="services.html">Services</a>
+      <a href="method.html">Method</a>
+      <a href="contact.html">Contact</a>
   </div>
 
   <main id="main">
     <section class="hero">
-      <div class="hero-veil" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <p class="eyebrow">Operations · Security · Infrastructure</p>
-        <h1>Spartan Phalanx</h1>
-        <p class="motto">Shoulder to shoulder. Shield to shield.</p>
-        <p class="lede">We come to your facility, examine how the operation is actually run, and tell you what must change for it to last.</p>
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Analyze · Review · Align</p>
+          <h1>Coalesce Ops</h1>
+          <p class="motto">We analyze, review, and align your products and processes so the flow is smoother, without adding headcount.</p>
+          <p class="lede">The people you already have can carry the work once the products and the processes agree. We take advantage of AI on that same work, so it smooths the flow instead of becoming another tool you have to staff. We do not smooth a rough flow by hiring.</p>
+          <div class="hero-cta">
+            <a class="btn primary" href="contact.html">Request a conversation</a>
+            <a class="btn ghost" href="practice.html">The practice</a>
+          </div>
+        </div>
+        <nav class="rail" aria-label="The standard">
+          <a href="method.html"><strong>Analyze</strong><span>How products and processes actually move, and where good people are covering the gaps by hand.</span></a>
+          <a href="method.html"><strong>Review</strong><span>What is split, what already works, and what would only look fixed if you added headcount.</span></a>
+          <a href="method.html"><strong>Align</strong><span>Products and processes on one flow, so the people you have can run it.</span></a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="wrap split">
+        <h2>Where the work splits</h2>
+        <div class="prose">
+          <p>A rough flow often looks like a headcount problem. It is usually products and processes that do not agree, so good people spend the week bridging them. A handoff has no owner. Two systems disagree about the same job. A second brand still runs its own week.</p>
+          <p>Leadership then hears a different account than the people doing the work. A control written for an audit can describe a different operation than the one on the floor. Coalesce Ops watches how the work actually moves, including security, the vendor stack, and spend, and writes what must join for the operation to run as one.</p>
+          <p>In scope: IT strategy and governance, security and compliance including SOC 2 and PCI, SaaS and what it costs, identity and access, automation of onboarding, offboarding, and the evidence, and one account for the executives who own the operation.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="facts" aria-label="The standard">
+      <div class="wrap facts-grid">
+        <article>
+          <p class="num">01</p>
+          <h2>Analyze</h2>
+          <p>How products and processes actually move, and where good people are covering the gaps by hand.</p>
+        </article>
+        <article>
+          <p class="num">02</p>
+          <h2>Review</h2>
+          <p>What is split, what already works, and what would only look fixed if you added headcount.</p>
+        </article>
+        <article>
+          <p class="num">03</p>
+          <h2>Align</h2>
+          <p>Products and processes on one flow, so the people you have can run it.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="band" id="ai">
+      <div class="wrap split">
+        <h2>Taking advantage of AI</h2>
+        <div class="prose">
+          <p>AI pays when it carries steps your people already do. We analyze which of those steps it can take, review the exposure and the cost, and align it with the products and processes in the flow.</p>
+          <p>The gain is smoother work. The constraint is the same one: no added headcount to watch the model. A tool that needs its own team is not an advantage.</p>
+          <p class="section-link"><a href="practice.html">Read the practice</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="band alt">
+      <div class="wrap">
+        <header class="section-head">
+          <h2>What the engagement covers</h2>
+          <p>Six places an operation usually comes apart, and where we put it back together.</p>
+        </header>
+        <div class="cards">
+          <article class="card">
+            <p class="num">01</p>
+            <h3><a href="services.html#picture">Operating picture</a></h3>
+            <p>One view of the work in flight, across the teams that touch it.</p>
+          </article>
+          <article class="card">
+            <p class="num">02</p>
+            <h3><a href="services.html#ownership">Ownership</a></h3>
+            <p>Named owners for the duties that currently sit between groups.</p>
+          </article>
+          <article class="card">
+            <p class="num">03</p>
+            <h3><a href="services.html#cadence">Cadence</a></h3>
+            <p>The reviews and escalations that actually run the week.</p>
+          </article>
+          <article class="card">
+            <p class="num">04</p>
+            <h3><a href="services.html#systems">Systems</a></h3>
+            <p>The tools, access, and records that must agree, including AI used on work people already do.</p>
+          </article>
+          <article class="card">
+            <p class="num">05</p>
+            <h3><a href="services.html#sites">Sites</a></h3>
+            <p>The same standard at every location that does the work.</p>
+          </article>
+          <article class="card">
+            <p class="num">06</p>
+            <h3><a href="services.html#transition">Transition</a></h3>
+            <p>After a merger, an acquisition, or a platform cutover, before two companies harden into place.</p>
+          </article>
+        </div>
+        <p class="section-link"><a href="services.html">Read the services</a></p>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <p class="eyebrow">Contact</p>
+        <h2>Describe the rough flow.</h2>
+        <p>Tell us which products and processes are out of alignment, and where you have been about to add headcount to cover it. We reply with a defined next step.</p>
         <div class="hero-cta">
-          <a class="btn primary" href="#contact">Request a consultation</a>
-          <a class="btn ghost" href="#practice">Our approach</a>
+          <a class="btn primary" href="contact.html">Request a conversation</a>
+          <a class="btn ghost" href="mailto:rmf@coalesceops.com">rmf@coalesceops.com</a>
         </div>
       </div>
     </section>
 
-    <section class="band" id="work">
-      <div class="wrap narrow">
-        <h2>What we do</h2>
-        <p>
-          We come on site and review the operation as it is actually run. The review covers
-          the systems we can reach, the people who operate them, and the leadership that
-          owns the decisions.
-        </p>
-        <p>
-          Security, quality, and infrastructure are examined as one system, from hardware and
-          networks through cloud and data. The work is informed by directing technology and
-          field teams in medical devices under FDA and ISO requirements, in energy and
-          telecommunications networks, and in security platforms, and by service in the
-          United States Marine Corps.
-        </p>
-        <p>
-          You receive a direct account of what needs attention and what must change for the
-          operation to be sustainable. Where the constraint is capacity, we help you add it —
-          by contract or by hire — so the correction is not left as a finding with no one to
-          carry it out.
-        </p>
-        <p>
-          The facility assessment is a fixed engagement. The fee is paid in full before the
-          visit is scheduled. Implementation, contract support, and hiring that follow the
-          findings are agreed separately.
-        </p>
-      </div>
-    </section>
-
-    <section class="band alt" id="practice">
-      <div class="wrap narrow">
-        <h2>The practice</h2>
-        <p>
-          The classical phalanx held because the line closed shoulder to shoulder, each shield
-          covering the position beside it. A gap was a failure of the formation, not of an
-          individual. Spartan Phalanx applies that discipline to modern information technology:
-          operations, security operations, and the infrastructure those functions share.
-        </p>
-        <p>
-          Engagements are conducted with your team. We design the posture, test it, strengthen
-          it, and demonstrate that it holds.
-        </p>
-      </div>
-    </section>
-
-    <section class="band" id="services">
-      <div class="wrap">
-        <header class="section-head">
-          <h2>Services</h2>
-          <p>A single practice across operations, security, and infrastructure.</p>
-        </header>
-        <ul class="service-list">
-          <li>
-            <h3>IT operations</h3>
-            <p>Stable platforms, maintained runbooks, change control that is observed, and monitoring directed to the responsible owner.</p>
-          </li>
-          <li>
-            <h3>Security operations</h3>
-            <p>Detection and response that connect the security operations center, information technology, and leadership, so alerts result in decisions.</p>
-          </li>
-          <li>
-            <h3>Security architecture</h3>
-            <p>Identity, network, cloud, and endpoint controls designed as one posture.</p>
-          </li>
-          <li>
-            <h3>ISO readiness</h3>
-            <p>ISO/IEC 27001 and related control work treated as an operating requirement: evidence that can be produced, owners who understand their duties, and gaps addressed before assessment.</p>
-          </li>
-          <li>
-            <h3>Penetration testing</h3>
-            <p>Testing informed by adversary methods, focused on the paths that matter, followed by remediation until findings are closed and retested.</p>
-          </li>
-          <li>
-            <h3>Infrastructure</h3>
-            <p>On-premises, hybrid, and cloud foundations with defined capacity, resilience, backup, and recovery.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="band alt" id="approach">
-      <div class="wrap">
-        <header class="section-head">
-          <h2>Why the approach holds</h2>
-          <p>The result is overlapping coverage under real operating conditions.</p>
-        </header>
-        <div class="efficacy">
-          <article>
-            <h3>Aligned disciplines</h3>
-            <p>
-              Operations without security operations leaves failures undetected. Security
-              operations without sound infrastructure investigates symptoms rather than causes.
-              Compliance work without both produces records without protection. These disciplines
-              stay aligned, so a finding in one area becomes a correction in the others.
-            </p>
-          </article>
-          <article>
-            <h3>Tested on your schedule</h3>
-            <p>
-              Penetration testing and tabletop exercises apply pressure deliberately. The
-              organization sees which controls fail, which signals arrive late, and where
-              ownership is unclear, before an incident sets the timeline.
-            </p>
-          </article>
-          <article>
-            <h3>Evidence</h3>
-            <p>
-              Readiness is documented: configurations, logs, tickets, restoration tests, and
-              retest results. We record what held, what failed, and what changed, so leadership
-              and assessors receive the same account the operators use.
-            </p>
-          </article>
-          <article>
-            <h3>Work that remains</h3>
-            <p>
-              The engagement establishes procedures, ownership, and operating habits your team
-              can maintain after the consultants depart.
-            </p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="band" id="engagements">
-      <div class="wrap narrow">
-        <h2>How an engagement proceeds</h2>
-        <ol class="steps">
-          <li>
-            <strong>Assess</strong>
-            <span>An on-site review of systems, personnel, and leadership, with a written account of what needs attention.</span>
-          </li>
-          <li>
-            <strong>Plan</strong>
-            <span>A prioritized sequence to strengthen, detect, document, and test according to risk.</span>
-          </li>
-          <li>
-            <strong>Implement and verify</strong>
-            <span>Execute the plan, assess or test, remediate, and retest until the posture holds.</span>
-          </li>
-          <li>
-            <strong>Sustain</strong>
-            <span>A retainer or follow-on cycle as the environment and the threat landscape change.</span>
-          </li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="band contact" id="contact">
-      <div class="wrap narrow">
-        <h2>Contact</h2>
-        <p>
-          Describe the matter: operations, security operations, an ISO timeline, or an
-          assessment. We will reply with a defined next step.
-        </p>
-        <p class="contact-mail">
-          <a href="mailto:rmf@SpartanPhalanx.com">rmf@SpartanPhalanx.com</a>
-        </p>
-        <p class="contact-phone">
-          <a href="tel:+18013191061">801.319.1061</a>
-        </p>
-        <p class="fine">© 2026 Robert Foster · Spartan Phalanx v1.0.10</p>
-      </div>
-    </section>
   </main>
 
-  <script src="assets/site.js?v=1.0.10"></script>
+  <footer class="site-foot">
+    <div class="wrap">
+      <div class="foot-row">
+        <div>
+          <p class="foot-name">Coalesce Ops</p>
+          <p class="foot-legal">© 2026 Robert Foster</p>
+          <p class="foot-version">Coalesce Ops v1.1.0</p>
+        </div>
+        <div class="foot-contact">
+          <p><a href="mailto:rmf@coalesceops.com">rmf@coalesceops.com</a></p>
+          <p><a href="tel:+18013191061">801.319.1061</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/site.js?v=1.1.0"></script>
 </body>
 </html>

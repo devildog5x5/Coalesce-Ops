@@ -1,0 +1,5 @@
+# Coalesce Ops — https://coalesceops.com
+User-agent: *
+Allow: /
+
+Sitemap: https://coalesceops.com/sitemap.xml

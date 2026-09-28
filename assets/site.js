@@ -4,6 +4,23 @@
   var settingsToggle = document.getElementById("settings-toggle");
   var settingsPanel = document.getElementById("settings-panel");
   var themeButtons = document.querySelectorAll(".theme-list button");
+  var themes = {
+    light: 1,
+    dark: 1,
+    green: 1,
+    "light-green": 1,
+    "dark-green": 1,
+    blue: 1,
+    "light-blue": 1
+  };
+  var hashPages = {
+    practice: "practice.html",
+    services: "services.html",
+    approach: "method.html",
+    engagements: "method.html",
+    contact: "contact.html",
+    work: "practice.html"
+  };
 
   function closeNav() {
     if (!drawer || !toggle) return;
@@ -17,9 +34,12 @@
     settingsToggle.setAttribute("aria-expanded", "false");
   }
 
-  function applyTheme(name) {
+  function applyTheme(name, persist) {
+    if (!themes[name]) name = "light";
     document.documentElement.setAttribute("data-theme", name);
-    try { localStorage.setItem("spartanphalanx-theme", name); } catch (e) {}
+    if (persist) {
+      try { localStorage.setItem("coalesceops-theme", name); } catch (e) {}
+    }
     var themeColor = getComputedStyle(document.documentElement).getPropertyValue("--theme-color").trim();
     var meta = document.querySelector('meta[name="theme-color"]');
     if (meta && themeColor) meta.setAttribute("content", themeColor);
@@ -55,7 +75,7 @@
     });
     themeButtons.forEach(function (button) {
       button.addEventListener("click", function () {
-        applyTheme(button.getAttribute("data-theme"));
+        applyTheme(button.getAttribute("data-theme"), true);
       });
     });
   }
@@ -73,5 +93,12 @@
     }
   });
 
-  applyTheme(document.documentElement.getAttribute("data-theme") || "dark");
+  var path = location.pathname;
+  var onHome = /(?:^|\/)(?:index\.html)?$/.test(path);
+  if (onHome && location.hash && hashPages[location.hash.slice(1)]) {
+    location.replace(hashPages[location.hash.slice(1)]);
+    return;
+  }
+
+  applyTheme(document.documentElement.getAttribute("data-theme") || "light", false);
 })();
