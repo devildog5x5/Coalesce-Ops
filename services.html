@@ -49,7 +49,8 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Outfit:wght@400;500;600&amp;display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Outfit:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Outfit:wght@400;500;600&amp;display=swap" /></noscript>
-  <link rel="stylesheet" href="assets/site.css?v=1.2.1" />
+  <link rel="preload" href="assets/site.css?v=1.3.0" as="style" />
+  <link rel="stylesheet" href="assets/site.css?v=1.3.0" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -268,7 +269,7 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="top">
-    <a class="brand" href="index.html">
+    <a class="brand" href="/">
       <img src="assets/favicon.svg" width="36" height="36" alt="" />
       <span class="brand-text">
         <span class="brand-name">Coalesce Ops</span>
@@ -278,15 +279,16 @@
 <!-- site-nav:start -->
   <nav class="nav" id="site-nav" aria-label="Primary">
     <div class="nav-group">
-      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="/">Home</a>
       <details class="nav-sections">
         <summary><span class="sr-only">Home sections</span></summary>
         <div class="nav-panel">
-          <a href="index.html#split">Where the work splits</a>
-          <a href="index.html#standard">Analyze, review, align</a>
-          <a href="index.html#ai">Taking advantage of AI</a>
-          <a href="index.html#engagements">What the engagement covers</a>
-          <a href="index.html#start">Start from the problem you have</a>
+          <a href="/#split">Where the work splits</a>
+          <a href="/#standard">Analyze, review, align</a>
+          <a href="/#ai">Taking advantage of AI</a>
+          <a href="/#trust">What you can count on</a>
+          <a href="/#engagements">What the engagement covers</a>
+          <a href="/#start">Start from the problem you have</a>
         </div>
       </details>
     </div>
@@ -371,7 +373,7 @@
         </div>
       </details>
     </div>
-    <div class="nav-group align-end">
+    <div class="nav-group">
       <a class="nav-link" href="fractional-devops-sre.html">DevOps</a>
       <details class="nav-sections">
         <summary><span class="sr-only">Fractional DevOps and SRE sections</span></summary>
@@ -384,7 +386,7 @@
         </div>
       </details>
     </div>
-    <div class="nav-group align-end">
+    <div class="nav-group">
       <a class="nav-link" href="method.html">Method</a>
       <details class="nav-sections">
         <summary><span class="sr-only">Method sections</span></summary>
@@ -401,11 +403,38 @@
       </details>
     </div>
     <div class="nav-group align-end">
-      <a class="nav-link nav-cta" href="contact.html">Contact</a>
+      <a class="nav-link" href="engagements.html">Engagements</a>
       <details class="nav-sections">
-        <summary><span class="sr-only">Contact sections</span></summary>
+        <summary><span class="sr-only">Engagement sections</span></summary>
         <div class="nav-panel">
+          <a href="engagements.html#consult">Free consult</a>
+          <a href="engagements.html#assessment">Assessment</a>
+          <a href="engagements.html#alignment">Alignment</a>
+          <a href="engagements.html#not">What is not included</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-group align-end">
+      <a class="nav-link" href="faq.html">FAQ</a>
+      <details class="nav-sections">
+        <summary><span class="sr-only">FAQ sections</span></summary>
+        <div class="nav-panel">
+          <a href="faq.html#booking">Booking</a>
+          <a href="faq.html#scope">Scope and price</a>
+          <a href="faq.html#limits">What this is not</a>
+          <a href="faq.html#record">The record</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-group align-end">
+      <a class="nav-link nav-cta" href="contact.html">Book</a>
+      <details class="nav-sections">
+        <summary><span class="sr-only">Booking sections</span></summary>
+        <div class="nav-panel">
+          <a href="contact.html#book">How to book</a>
           <a href="contact.html#include">What to include</a>
+          <a href="contact.html#expect">What you can expect</a>
+          <a href="contact.html#privacy">What stays private</a>
         </div>
       </details>
     </div>
@@ -447,7 +476,7 @@
             <p class="num">01</p>
             <div>
               <h2>Operating picture</h2>
-              <p>One view of the work in flight: what is open, who has it, and which commitment is at risk. Leadership and the floor read the same picture.</p>
+              <p>One view of the work in flight: what is open, who has it, and which commitment is at risk. Leadership and the floor read the same picture.</p><p>You will know this is the gap when the Monday meeting and the floor describe different jobs. The picture is not a new dashboard for its own sake. It is the smallest view both sides can use to see the same commitment.</p>
               <p class="covers">Work in flight · Who has it · The commitment at risk</p>
             </div>
           </li>
@@ -455,7 +484,7 @@
             <p class="num">02</p>
             <div>
               <h2>Ownership</h2>
-              <p>A name on every duty that can stall the week, including the handoffs that currently belong to no one. Decisions that sit between groups get an owner.</p>
+              <p>A name on every duty that can stall the week, including the handoffs that currently belong to no one. Decisions that sit between groups get an owner.</p><p>You will know this is the gap when a ticket, a control, or a vendor sits “with the team” and no person can change it. Ownership is a name that can be called, including for access reviews and for the evidence an audit will ask to see.</p>
               <p class="covers">Named owners · Handoffs · Decisions between groups</p>
             </div>
           </li>
@@ -463,7 +492,7 @@
             <p class="num">03</p>
             <div>
               <h2>Cadence</h2>
-              <p>The meetings, reviews, and escalations that run the week, reduced to the ones that change the work. A calendar full of updates is not a cadence.</p>
+              <p>The meetings, reviews, and escalations that run the week, reduced to the ones that change the work. A calendar full of updates is not a cadence.</p><p>You will know this is the gap when the week is full and the stalled job is still stalled. A cadence has a decision in it. Status meetings that cannot change the work come off the calendar.</p>
               <p class="covers">Meetings · Reviews · Escalations</p>
             </div>
           </li>
@@ -480,7 +509,7 @@
             <p class="num">05</p>
             <div>
               <h2>Sites</h2>
-              <p>The same standard at every location that does the work, with room for what is truly local. A second site does not get to invent a second operation.</p>
+              <p>The same standard at every location that does the work, with room for what is truly local. A second site does not get to invent a second operation.</p><p>You will know this is the gap when a second site, a second brand, or a company just acquired runs its own access and its own week. Local exceptions are written down. Everything else is the same operation.</p>
               <p class="covers">Every location · The same standard · What is truly local</p>
             </div>
           </li>
@@ -488,7 +517,7 @@
             <p class="num">06</p>
             <div>
               <h2>Transition</h2>
-              <p>After a merger, an acquisition, a leadership change, or a platform cutover, the operation needs one way of working, one set of access, and controls that match the work, before the old ways harden into two companies again.</p>
+              <p>After a merger, an acquisition, a leadership change, or a platform cutover, the operation needs one way of working, one set of access, and controls that match the work, before the old ways harden into two companies again.</p><p>You will know this is the gap when two login paths, two approval chains, or two evidence folders are still in use months after the change. Transition work joins them before the old way becomes the way the floor trusts.</p>
               <p class="covers">Merger · Acquisition · Leadership change · Platform cutover</p>
             </div>
           </li>
@@ -517,8 +546,8 @@
         <h2>Describe the rough flow.</h2>
         <p>Governance, SOC 2 or PCI, the software stack and its cost, or a company just acquired are in scope.</p>
         <div class="hero-cta">
-          <a class="btn primary" href="contact.html">Request a conversation</a>
-          <a class="btn ghost" href="mailto:rmf@coalesceops.com">rmf@coalesceops.com</a>
+          <a class="btn primary" href="mailto:rmf@coalesceops.com?subject=Free%20consult">Book a free consult</a>
+          <a class="btn ghost" href="tel:+18013191061">Call 801.319.1061</a>
         </div>
       </div>
     </section>
@@ -530,7 +559,7 @@
         <div>
           <p class="foot-name">Coalesce Ops</p>
           <p class="foot-legal">© 2026 Robert Foster</p>
-          <p class="foot-version">Coalesce Ops v1.2.1</p>
+          <p class="foot-version">Coalesce Ops v1.3.0</p>
         </div>
         <div class="foot-contact">
           <p><a href="mailto:rmf@coalesceops.com">rmf@coalesceops.com</a></p>
@@ -538,7 +567,7 @@
         </div>
       </div>
       <nav class="foot-nav" aria-label="Site">
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <a href="practice.html">Practice</a>
         <a href="services.html">Services</a>
         <a href="method.html">Method</a>
@@ -547,10 +576,12 @@
         <a href="incident-response-readiness.html">Incident response readiness</a>
         <a href="cloud-cost-reliability.html">Cloud cost and reliability</a>
         <a href="fractional-devops-sre.html">Fractional DevOps and SRE</a>
-        <a href="contact.html">Contact</a>
+        <a href="engagements.html">Engagements</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Book a consult</a>
       </nav>
     </div>
   </footer>
-  <script src="assets/site.js?v=1.2.1" defer></script>
+  <script src="assets/site.js?v=1.3.0" defer></script>
 </body>
 </html>

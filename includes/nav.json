@@ -2,14 +2,15 @@
   "items": [
     {
       "label": "Home",
-      "href": "index.html",
+      "href": "/",
       "sectionsLabel": "Home sections",
       "sections": [
-        {"label": "Where the work splits", "href": "index.html#split"},
-        {"label": "Analyze, review, align", "href": "index.html#standard"},
-        {"label": "Taking advantage of AI", "href": "index.html#ai"},
-        {"label": "What the engagement covers", "href": "index.html#engagements"},
-        {"label": "Start from the problem you have", "href": "index.html#start"}
+        {"label": "Where the work splits", "href": "/#split"},
+        {"label": "Analyze, review, align", "href": "/#standard"},
+        {"label": "Taking advantage of AI", "href": "/#ai"},
+        {"label": "What you can count on", "href": "/#trust"},
+        {"label": "What the engagement covers", "href": "/#engagements"},
+        {"label": "Start from the problem you have", "href": "/#start"}
       ]
     },
     {
@@ -115,12 +116,37 @@
       ]
     },
     {
-      "label": "Contact",
+      "label": "Engagements",
+      "href": "engagements.html",
+      "sectionsLabel": "Engagement sections",
+      "sections": [
+        {"label": "Free consult", "href": "engagements.html#consult"},
+        {"label": "Assessment", "href": "engagements.html#assessment"},
+        {"label": "Alignment", "href": "engagements.html#alignment"},
+        {"label": "What is not included", "href": "engagements.html#not"}
+      ]
+    },
+    {
+      "label": "FAQ",
+      "href": "faq.html",
+      "sectionsLabel": "FAQ sections",
+      "sections": [
+        {"label": "Booking", "href": "faq.html#booking"},
+        {"label": "Scope and price", "href": "faq.html#scope"},
+        {"label": "What this is not", "href": "faq.html#limits"},
+        {"label": "The record", "href": "faq.html#record"}
+      ]
+    },
+    {
+      "label": "Book",
       "href": "contact.html",
       "cta": true,
-      "sectionsLabel": "Contact sections",
+      "sectionsLabel": "Booking sections",
       "sections": [
-        {"label": "What to include", "href": "contact.html#include"}
+        {"label": "How to book", "href": "contact.html#book"},
+        {"label": "What to include", "href": "contact.html#include"},
+        {"label": "What you can expect", "href": "contact.html#expect"},
+        {"label": "What stays private", "href": "contact.html#privacy"}
       ]
     }
   ]

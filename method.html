@@ -49,7 +49,8 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Outfit:wght@400;500;600&amp;display=swap" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Outfit:wght@400;500;600&amp;display=swap" media="print" onload="this.media='all'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600&amp;family=Outfit:wght@400;500;600&amp;display=swap" /></noscript>
-  <link rel="stylesheet" href="assets/site.css?v=1.2.1" />
+  <link rel="preload" href="assets/site.css?v=1.3.0" as="style" />
+  <link rel="stylesheet" href="assets/site.css?v=1.3.0" />
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -145,7 +146,7 @@
 <body>
   <a class="skip" href="#main">Skip to content</a>
   <header class="top">
-    <a class="brand" href="index.html">
+    <a class="brand" href="/">
       <img src="assets/favicon.svg" width="36" height="36" alt="" />
       <span class="brand-text">
         <span class="brand-name">Coalesce Ops</span>
@@ -155,15 +156,16 @@
 <!-- site-nav:start -->
   <nav class="nav" id="site-nav" aria-label="Primary">
     <div class="nav-group">
-      <a class="nav-link" href="index.html">Home</a>
+      <a class="nav-link" href="/">Home</a>
       <details class="nav-sections">
         <summary><span class="sr-only">Home sections</span></summary>
         <div class="nav-panel">
-          <a href="index.html#split">Where the work splits</a>
-          <a href="index.html#standard">Analyze, review, align</a>
-          <a href="index.html#ai">Taking advantage of AI</a>
-          <a href="index.html#engagements">What the engagement covers</a>
-          <a href="index.html#start">Start from the problem you have</a>
+          <a href="/#split">Where the work splits</a>
+          <a href="/#standard">Analyze, review, align</a>
+          <a href="/#ai">Taking advantage of AI</a>
+          <a href="/#trust">What you can count on</a>
+          <a href="/#engagements">What the engagement covers</a>
+          <a href="/#start">Start from the problem you have</a>
         </div>
       </details>
     </div>
@@ -248,7 +250,7 @@
         </div>
       </details>
     </div>
-    <div class="nav-group align-end">
+    <div class="nav-group">
       <a class="nav-link" href="fractional-devops-sre.html">DevOps</a>
       <details class="nav-sections">
         <summary><span class="sr-only">Fractional DevOps and SRE sections</span></summary>
@@ -261,7 +263,7 @@
         </div>
       </details>
     </div>
-    <div class="nav-group align-end">
+    <div class="nav-group">
       <a class="nav-link" href="method.html">Method</a>
       <details class="nav-sections">
         <summary><span class="sr-only">Method sections</span></summary>
@@ -278,11 +280,38 @@
       </details>
     </div>
     <div class="nav-group align-end">
-      <a class="nav-link nav-cta" href="contact.html">Contact</a>
+      <a class="nav-link" href="engagements.html">Engagements</a>
       <details class="nav-sections">
-        <summary><span class="sr-only">Contact sections</span></summary>
+        <summary><span class="sr-only">Engagement sections</span></summary>
         <div class="nav-panel">
+          <a href="engagements.html#consult">Free consult</a>
+          <a href="engagements.html#assessment">Assessment</a>
+          <a href="engagements.html#alignment">Alignment</a>
+          <a href="engagements.html#not">What is not included</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-group align-end">
+      <a class="nav-link" href="faq.html">FAQ</a>
+      <details class="nav-sections">
+        <summary><span class="sr-only">FAQ sections</span></summary>
+        <div class="nav-panel">
+          <a href="faq.html#booking">Booking</a>
+          <a href="faq.html#scope">Scope and price</a>
+          <a href="faq.html#limits">What this is not</a>
+          <a href="faq.html#record">The record</a>
+        </div>
+      </details>
+    </div>
+    <div class="nav-group align-end">
+      <a class="nav-link nav-cta" href="contact.html">Book</a>
+      <details class="nav-sections">
+        <summary><span class="sr-only">Booking sections</span></summary>
+        <div class="nav-panel">
+          <a href="contact.html#book">How to book</a>
           <a href="contact.html#include">What to include</a>
+          <a href="contact.html#expect">What you can expect</a>
+          <a href="contact.html#privacy">What stays private</a>
         </div>
       </details>
     </div>
@@ -323,27 +352,27 @@
           <article id="map">
             <p class="num">01</p>
             <h2>Map</h2>
-            <p>Watch how a real piece of work moves from request to done. The map is the path people use, including the side paths the official process does not mention.</p>
+            <p>Watch how a real piece of work moves from request to done. The map is the path people use, including the side paths the official process does not mention.</p><p>Pick one job the week depends on. Follow it across the teams that touch it, and write the steps that are not in the diagram. A map that only repeats the policy is not a finding. The finding is the path the work actually takes when the official one stalls.</p>
           </article>
           <article id="name">
             <p class="num">02</p>
             <h2>Name</h2>
-            <p>Put one owner on each duty that can stop that path. If two people believe they own it, or nobody does, that is the finding.</p>
+            <p>Put one owner on each duty that can stop that path. If two people believe they own it, or nobody does, that is the finding.</p><p>Shared admin access, a vendor nobody renews, and a control whose evidence lives in a different system than the work are the same kind of gap. The name has to be a person who can change the outcome, not a committee and not a tool.</p>
           </article>
           <article id="join">
             <p class="num">03</p>
             <h2>Join</h2>
-            <p>Close the seams that matter first: a handoff, two records that disagree, access that is shared with no owner, or a brand that runs a different week.</p>
+            <p>Close the seams that matter first: a handoff, two records that disagree, access that is shared with no owner, or a brand that runs a different week.</p><p>Joining does not mean replacing the stack. The products already in use stay, unless a record cannot carry the work. Two sites do not get two operations. A company just acquired does not get to keep a second week beside the first.</p>
           </article>
           <article id="prove">
             <p class="num">04</p>
             <h2>Prove</h2>
-            <p>Run the new cadence on a real week. Record what held, what slipped, and what changed, including SOC 2 and PCI evidence and the automation that keeps onboarding, offboarding, and access review current.</p>
+            <p>Run the new cadence on a real week. Record what held, what slipped, and what changed, including SOC 2 and PCI evidence and the automation that keeps onboarding, offboarding, and access review current.</p><p>Proof is a week that already happened, not a slide. If the evidence for an audit describes a different operation than the one on the floor, the evidence is wrong. The same is true of a dashboard that leadership reads and the floor does not.</p>
           </article>
           <article id="leave">
             <p class="num">05</p>
             <h2>Leave</h2>
-            <p>Hand over the owners, the cadence, and the record. The team should be able to run the next week without a consultant in the meeting.</p>
+            <p>Hand over the owners, the cadence, and the record. The team should be able to run the next week without a consultant in the meeting.</p><p>Leaving is part of the method, not a hope. The engagement is finished when the people you already have can run it. A result that needs a consultant in the room every week is headcount by another name.</p>
           </article>
         </div>
       </div>
@@ -390,7 +419,9 @@
           <li><a href="infrastructure-assessment.html">Infrastructure assessment</a></li>
           <li><a href="incident-response-readiness.html">Incident response readiness</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="engagements.html">Engagements</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Book a consult</a></li>
           </ul>
         </nav>
       </div>
@@ -401,8 +432,8 @@
         <h2>The first visit is scoped in writing.</h2>
         <p>It is scheduled after that scope is agreed. Work that follows is agreed separately.</p>
         <div class="hero-cta">
-          <a class="btn primary" href="contact.html">Request a conversation</a>
-          <a class="btn ghost" href="mailto:rmf@coalesceops.com">rmf@coalesceops.com</a>
+          <a class="btn primary" href="mailto:rmf@coalesceops.com?subject=Free%20consult">Book a free consult</a>
+          <a class="btn ghost" href="tel:+18013191061">Call 801.319.1061</a>
         </div>
       </div>
     </section>
@@ -414,7 +445,7 @@
         <div>
           <p class="foot-name">Coalesce Ops</p>
           <p class="foot-legal">© 2026 Robert Foster</p>
-          <p class="foot-version">Coalesce Ops v1.2.1</p>
+          <p class="foot-version">Coalesce Ops v1.3.0</p>
         </div>
         <div class="foot-contact">
           <p><a href="mailto:rmf@coalesceops.com">rmf@coalesceops.com</a></p>
@@ -422,7 +453,7 @@
         </div>
       </div>
       <nav class="foot-nav" aria-label="Site">
-        <a href="index.html">Home</a>
+        <a href="/">Home</a>
         <a href="practice.html">Practice</a>
         <a href="services.html">Services</a>
         <a href="method.html">Method</a>
@@ -431,10 +462,12 @@
         <a href="incident-response-readiness.html">Incident response readiness</a>
         <a href="cloud-cost-reliability.html">Cloud cost and reliability</a>
         <a href="fractional-devops-sre.html">Fractional DevOps and SRE</a>
-        <a href="contact.html">Contact</a>
+        <a href="engagements.html">Engagements</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Book a consult</a>
       </nav>
     </div>
   </footer>
-  <script src="assets/site.js?v=1.2.1" defer></script>
+  <script src="assets/site.js?v=1.3.0" defer></script>
 </body>
 </html>

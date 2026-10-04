@@ -87,6 +87,13 @@ def ids_in(html: str) -> set[str]:
     return set(re.findall(r'\sid="([^"]+)"', html))
 
 
+def page_file(href: str) -> str:
+    path = href.split("#", 1)[0]
+    if path in ("", "/", "index.html"):
+        return "index.html"
+    return path
+
+
 def source_leaks(text: str, label: str) -> list[str]:
     found = []
     lowered = text.lower()
@@ -124,13 +131,14 @@ def main() -> None:
                 errors.append(f"Section link has no id: {href}")
                 continue
             filename, anchor = href.split("#", 1)
+            filename = page_file(filename if filename else "/")
             if filename not in pages:
                 errors.append(f"Menu points at missing page {filename}")
                 continue
             if anchor not in ids_in(pages[filename]):
                 errors.append(f"Missing section id #{anchor} on {filename}")
 
-    linked_pages = {item["href"] for item in nav["items"]}
+    linked_pages = {page_file(item["href"]) for item in nav["items"]}
     for name in pages:
         if name == "404.html":
             continue
@@ -211,7 +219,21 @@ def main() -> None:
             errors.append(f"{name} is noindex")
         if "PLACEHOLDER" in html:
             errors.append(f"{name} contains a PLACEHOLDER value")
+        if re.search(r"starting at|\$\s?\d", html, re.I):
+            errors.append(f"{name} publishes a price. This site has no price list.")
         errors.extend(source_leaks(html, name))
+        main = re.search(r"<main\b.*</main>", html, re.S)
+        words = re.findall(r"[A-Za-z0-9']+", re.sub(r"<[^>]+>", " ", main.group(0) if main else ""))
+        minimum = {
+            "contact.html": 400,
+            "method.html": 400,
+            "services.html": 450,
+            "engagements.html": 450,
+            "faq.html": 450,
+            "index.html": 600,
+        }.get(name)
+        if minimum and len(words) < minimum:
+            errors.append(f"{name} main copy is {len(words)} words; it needs at least {minimum} to be worth indexing")
         headings = [int(level) for level in re.findall(r"<h([1-6])\b", html)]
         if headings.count(1) != 1:
             errors.append(f"{name} should have exactly one h1, found {headings.count(1)}")
@@ -228,6 +250,9 @@ def main() -> None:
             if href.startswith(("mailto:", "tel:", "https://", "http://", "#")):
                 continue
             path_part, _, anchor = href.partition("#")
+            if path_part.startswith("/"):
+                path_part = path_part[1:]
+            path_part = page_file(path_part if path_part else "/")
             target = ROOT / path_part
             if path_part.endswith(".html") and not target.is_file():
                 errors.append(f"{name} links to missing {href}")
@@ -313,6 +338,28 @@ def main() -> None:
     for needle in ("Require all denied", "Deny from all", ".git", "includes", "installers"):
         if needle not in htaccess:
             errors.append(f".htaccess is missing {needle}")
+    for needle in (
+        "https://coalesceops.com",
+        "www\\.coalesceops\\.com",
+        "index\\.(html|php)",
+        "X-Forwarded-Proto",
+        "BROTLI_COMPRESS",
+        "max-age=2592000",
+    ):
+        if needle not in htaccess:
+            errors.append(f".htaccess is missing the canonical-host or cache rule {needle}")
+    if "faq.html" in pages:
+        faq_blocks = json_ld_blocks(pages["faq.html"])
+        faq_types = []
+        for block in faq_blocks:
+            for node in walk(block):
+                kind = node.get("@type")
+                if isinstance(kind, list):
+                    faq_types.extend(kind)
+                elif kind:
+                    faq_types.append(kind)
+        if "FAQPage" not in faq_types:
+            errors.append("faq.html is missing FAQPage JSON-LD")
 
     manifest = json.loads((ROOT / "site.webmanifest").read_text(encoding="utf-8"))
     if manifest.get("name") != "Coalesce Ops":
