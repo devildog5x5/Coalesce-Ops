@@ -94,6 +94,25 @@ try {
         if ($name.StartsWith('/') -or $name.StartsWith('\')) { throw "Zip entry is absolute: $name" }
     }
     if ($names -notcontains 'index.html') { throw "index.html is not at the zip root" }
+    foreach ($name in $names) {
+        $lower = $name.ToLowerInvariant()
+        if ($lower -match '(^|/)(\.git|\.cursor|includes|build|installers|__pycache__|node_modules)(/|$)') {
+            throw "Zip contains a source-only path: $name"
+        }
+        if ($lower -match '\.(zip|7z|ps1|py|pyc|pyo|sh|md|json|bak|log|ya?ml|toml|ini)$') {
+            throw "Zip contains a file that must not be published: $name"
+        }
+        if ($lower -match '(^|/)(readme\.md|sop\.md|site\.config\.json|nav\.json|version)$') {
+            throw "Zip contains an operator file: $name"
+        }
+    }
+    $staged = Get-ChildItem -Path $Stage -Recurse -File | Where-Object {
+        $_.Extension -in @(".html", ".txt", ".xml", ".webmanifest", ".svg", ".css", ".js") -or $_.Name -eq ".htaccess"
+    } | Select-String -Pattern 'github\.com|github\.io|gitlab\.com|bitbucket\.org|releases/download' -AllMatches
+    if ($staged) {
+        $hit = $staged | Select-Object -First 1
+        throw "Staged site still points at source or a release: $($hit.Path)"
+    }
     foreach ($required in @(
         'assets/favicon.svg',
         'assets/favicon-32.png',

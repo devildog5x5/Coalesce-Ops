@@ -27,6 +27,12 @@ The public site is `https://coalesceops.com`.
 
 `site.config.json` holds the verification tokens and the business details that are not already printed on the site. `PLACEHOLDER` and blank optional fields are left out of the pages. Do not invent an address, a service area, reviews, or ratings. Phone, email, and the founder's name stay as they are published.
 
-After a real value is filled in, rebuild the Hostinger zip with `powershell -File .\build_site_zip.ps1` and upload that.
+After a real value is filled in, rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1` and upload that.
 
 How to submit pages to IndexNow, and how to paste Google and Bing verification, is in the README.
+
+## Source code and release archives
+
+Never link to or serve source code or release zips from a live site.
+
+The public pages, the menu, the footer, the sitemap, and structured data do not point at a repository, a source tree, or a release archive. The Hostinger drop contains only the public site. It does not contain archives, build scripts, `.git`, source-only folders, or operator documents. `.htaccess` denies those kinds of files if they are uploaded by mistake.

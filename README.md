@@ -2,15 +2,13 @@
 
 One practice for joining separate teams, systems, and sites into a single operation.
 
-Open `index.html` locally, or unzip the zip into Hostinger `public_html`.
+Open `index.html` locally. The public site is `https://coalesceops.com`.
 
-**Hostinger zip:** `CoalesceOps-1.2.0.zip` — unzip into `public_html` (files at the zip root, forward-slash paths). Rebuild with `powershell -File .\build_site_zip.ps1` (filename includes the version from `VERSION`). The build also needs Python 3, which checks the menu and stamps `site.config.json`. Footer on every page: Coalesce Ops v1.2.0.
+Rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1`. Python 3 is required: it checks the menu and stamps `site.config.json`. Unzip the result into `public_html` so the files sit at the archive root, with forward-slash paths. Footer on every page: Coalesce Ops v1.2.1.
 
-Repo: [devildog5x5/Coalesce-Ops](https://github.com/devildog5x5/Coalesce-Ops)
+Do not link to this repository, to source code, or to a release archive from the live site. That rule is in [SOP.md](SOP.md).
 
 **Contact:** rmf@coalesceops.com · 801.319.1061
-
-The public site is `https://coalesceops.com`.
 
 ## Main menu
 
@@ -39,7 +37,7 @@ Leave these as `PLACEHOLDER` until they are real and public. Do not invent them.
 - `address` — fill `streetAddress`, `addressLocality`, `addressRegion`, `postalCode`, and `addressCountry` together, or leave them all blank
 - `legalName` — only if the legal name is different from Coalesce Ops
 - `areaServed` — only if a service area should be published
-- `sameAs` — `https://` profile URLs only
+- `sameAs` — public `https://` profile URLs only. A repository, source tree, or release archive is refused.
 
 Coalesce Ops, Robert Foster, rmf@coalesceops.com, and 801.319.1061 are already published. They are not placeholders.
 

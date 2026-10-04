@@ -1,5 +1,5 @@
 ---
-description: Pack a versioned Hostinger zip, publish it on GitHub Releases, and put the real download URL in README.
+description: Pack a versioned Hostinger zip. Never link that archive or the repository from the live site.
 alwaysApply: true
 ---
 
@@ -23,7 +23,7 @@ The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 1. Bump `VERSION` before a new ship. Put that same version in the footer as plain text: `Coalesce Ops vX.Y.Z`. Commit and `git push` to `main`.
 2. Tag `vX.Y.Z` and `gh release create`, uploading `CoalesceOps-X.Y.Z.zip`.
 3. Verify the asset URL with `gh release view`. Never invent `releases/download/...` links.
-4. Put that verbatim HTTPS URL in README. Commit and push the README.
+4. Do not put that URL, the repository, or any source-code link in the site, the menu, the footer, the sitemap, structured data `sameAs`, or the README. `SOP.md` forbids serving source or release archives from the live site. Report the URL only in the chat handoff.
 
 ## Chat handoff — **### New build links**
 

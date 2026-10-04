@@ -87,6 +87,19 @@ def ids_in(html: str) -> set[str]:
     return set(re.findall(r'\sid="([^"]+)"', html))
 
 
+def source_leaks(text: str, label: str) -> list[str]:
+    found = []
+    lowered = text.lower()
+    for needle in ("github.com", "github.io", "gitlab.com", "bitbucket.org", "releases/download", "source code"):
+        if needle in lowered:
+            found.append(f"{label} mentions {needle}")
+    for href in re.findall(r'(?:href|src)\s*=\s*["\']([^"\']+)', text, flags=re.I):
+        target = href.lower().split("#", 1)[0].split("?", 1)[0]
+        if target.endswith(".zip") or "/releases/" in href.lower():
+            found.append(f"{label} links to a release or zip: {href}")
+    return found
+
+
 def main() -> None:
     errors = []
     nav = load_nav()
@@ -198,6 +211,7 @@ def main() -> None:
             errors.append(f"{name} is noindex")
         if "PLACEHOLDER" in html:
             errors.append(f"{name} contains a PLACEHOLDER value")
+        errors.extend(source_leaks(html, name))
         headings = [int(level) for level in re.findall(r"<h([1-6])\b", html)]
         if headings.count(1) != 1:
             errors.append(f"{name} should have exactly one h1, found {headings.count(1)}")
@@ -231,6 +245,12 @@ def main() -> None:
         nodes = [node for block in blocks for node in walk(block)]
         types = []
         for node in nodes:
+            same_as = node.get("sameAs") or []
+            if isinstance(same_as, str):
+                same_as = [same_as]
+            for url in same_as:
+                if isinstance(url, str):
+                    errors.extend(source_leaks(url, f"{name} sameAs"))
             kind = node.get("@type")
             if isinstance(kind, list):
                 types.extend(kind)
@@ -273,6 +293,26 @@ def main() -> None:
         errors.append(f"sitemap locs {locs} do not match public pages {expected_locs}")
     if "404.html" in sitemap:
         errors.append("sitemap includes 404.html")
+    errors.extend(source_leaks(sitemap, "sitemap.xml"))
+    errors.extend(source_leaks(json.dumps(nav), "includes/nav.json"))
+    for url in config.get("sameAs") or []:
+        if isinstance(url, str):
+            errors.extend(source_leaks(url, "site.config.json sameAs"))
+
+    readme = (ROOT / "README.md").read_text(encoding="utf-8")
+    for url in re.findall(r"https?://[^\s)>]+", readme):
+        errors.extend(source_leaks(url, "README"))
+
+    htaccess = (ROOT / ".htaccess").read_text(encoding="utf-8")
+    denied = set()
+    for group in re.findall(r"\(\?i\)\\\.\(([^)]+)\)", htaccess):
+        denied.update(group.split("|"))
+    for extension in ("zip", "ps1", "py", "json", "md", "sh"):
+        if extension not in denied:
+            errors.append(f".htaccess does not deny *.{extension}")
+    for needle in ("Require all denied", "Deny from all", ".git", "includes", "installers"):
+        if needle not in htaccess:
+            errors.append(f".htaccess is missing {needle}")
 
     manifest = json.loads((ROOT / "site.webmanifest").read_text(encoding="utf-8"))
     if manifest.get("name") != "Coalesce Ops":

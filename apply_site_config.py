@@ -88,6 +88,18 @@ def address_from(config: dict):
     return values
 
 
+def source_link_reason(url: str) -> str:
+    lowered = url.lower()
+    if any(host in lowered for host in ("github.com", "github.io", "gitlab.com", "bitbucket.org")):
+        return "a source repository"
+    path = lowered.split("?", 1)[0].split("#", 1)[0]
+    if path.endswith(".zip"):
+        return "a zip download"
+    if "/releases/" in lowered or "releases/download" in lowered:
+        return "a release archive"
+    return ""
+
+
 def same_as_from(config: dict) -> list[str]:
     urls = []
     for item in config.get("sameAs") or []:
@@ -97,6 +109,9 @@ def same_as_from(config: dict) -> list[str]:
         if not url.startswith("https://"):
             print(f"WARNING: skipped sameAs value that is not an https URL: {url}", file=sys.stderr)
             continue
+        reason = source_link_reason(url)
+        if reason:
+            raise SystemExit(f"sameAs must not point at {reason}: {url}")
         urls.append(url)
     return urls
 

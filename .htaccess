@@ -18,3 +18,29 @@ AddType text/plain .txt
   ExpiresByType image/png "access plus 30 days"
   ExpiresByType application/manifest+json "access plus 1 day"
 </IfModule>
+
+# Never serve source, operator files, or release archives from the live site.
+<IfModule mod_authz_core.c>
+  <FilesMatch "(?i)\.(7z|bak|bat|cmd|env|gz|ini|json|key|log|md|pem|ps1|py|pyc|pyo|sh|sql|tar|tgz|toml|ya?ml|zip)$">
+    Require all denied
+  </FilesMatch>
+  <FilesMatch "^(VERSION|\.gitignore|\.gitattributes)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>
+<IfModule !mod_authz_core.c>
+  <FilesMatch "(?i)\.(7z|bak|bat|cmd|env|gz|ini|json|key|log|md|pem|ps1|py|pyc|pyo|sh|sql|tar|tgz|toml|ya?ml|zip)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+  <FilesMatch "^(VERSION|\.gitignore|\.gitattributes)$">
+    Order allow,deny
+    Deny from all
+  </FilesMatch>
+</IfModule>
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule "(?:^|/)\.git(?:/|$)" - [F,L]
+  RewriteRule "(?:^|/)\.cursor(?:/|$)" - [F,L]
+  RewriteRule "(?:^|/)(?:includes|build|installers|__pycache__|node_modules)(?:/|$)" - [F,L]
+</IfModule>

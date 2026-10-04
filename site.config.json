@@ -1,5 +1,5 @@
 {
-  "_readme": "Optional values left as PLACEHOLDER are omitted from the site. Do not invent an address, a service area, a legal name, reviews, or ratings. Phone, email, and Robert Foster are already published on the pages and are not edited here. After a real value is filled in, run: powershell -File .\\build_site_zip.ps1",
+  "_readme": "Optional values left as PLACEHOLDER are omitted from the site. Do not invent an address, a service area, a legal name, reviews, or ratings. Phone, email, and Robert Foster are already published on the pages and are not edited here. sameAs accepts public https profile URLs only; a repository, source tree, or release archive is refused. After a real value is filled in, run: powershell -File .\\build_site_zip.ps1",
   "siteUrl": "https://coalesceops.com",
   "indexNowKey": "3adb4c7af657a417648edbc4bdf85574",
   "googleSiteVerification": "PLACEHOLDER",
