@@ -1,0 +1,127 @@
+{
+  "items": [
+    {
+      "label": "Home",
+      "href": "index.html",
+      "sectionsLabel": "Home sections",
+      "sections": [
+        {"label": "Where the work splits", "href": "index.html#split"},
+        {"label": "Analyze, review, align", "href": "index.html#standard"},
+        {"label": "Taking advantage of AI", "href": "index.html#ai"},
+        {"label": "What the engagement covers", "href": "index.html#engagements"},
+        {"label": "Start from the problem you have", "href": "index.html#start"}
+      ]
+    },
+    {
+      "label": "Practice",
+      "href": "practice.html",
+      "sectionsLabel": "Practice sections",
+      "sections": [
+        {"label": "What coalesce means", "href": "practice.html#meaning"},
+        {"label": "In scope", "href": "practice.html#scope"},
+        {"label": "Strategy", "href": "practice.html#strategy"},
+        {"label": "Security and compliance", "href": "practice.html#security"},
+        {"label": "Systems and cost", "href": "practice.html#systems-cost"},
+        {"label": "AI on the work", "href": "practice.html#ai-work"},
+        {"label": "What remains", "href": "practice.html#remains"}
+      ]
+    },
+    {
+      "label": "Services",
+      "href": "services.html",
+      "sectionsLabel": "Services sections",
+      "sections": [
+        {"label": "Operating picture", "href": "services.html#picture"},
+        {"label": "Ownership", "href": "services.html#ownership"},
+        {"label": "Cadence", "href": "services.html#cadence"},
+        {"label": "Systems", "href": "services.html#systems"},
+        {"label": "Sites", "href": "services.html#sites"},
+        {"label": "Transition", "href": "services.html#transition"}
+      ]
+    },
+    {
+      "label": "SecOps",
+      "href": "secops-consulting.html",
+      "sectionsLabel": "SecOps consulting sections",
+      "sections": [
+        {"label": "Why this search starts", "href": "secops-consulting.html#why"},
+        {"label": "What is in scope", "href": "secops-consulting.html#covers"},
+        {"label": "Before the first call", "href": "secops-consulting.html#prepare"},
+        {"label": "Where AI fits", "href": "secops-consulting.html#ai-fit"},
+        {"label": "What this is not", "href": "secops-consulting.html#limits"},
+        {"label": "What you leave with", "href": "secops-consulting.html#result"}
+      ]
+    },
+    {
+      "label": "Infrastructure",
+      "href": "infrastructure-assessment.html",
+      "sectionsLabel": "Infrastructure assessment sections",
+      "sections": [
+        {"label": "When to ask for one", "href": "infrastructure-assessment.html#when"},
+        {"label": "What we look at", "href": "infrastructure-assessment.html#examine"},
+        {"label": "Walk one job", "href": "infrastructure-assessment.html#path"},
+        {"label": "What you receive", "href": "infrastructure-assessment.html#result"},
+        {"label": "Cost on the same picture", "href": "infrastructure-assessment.html#cost"}
+      ]
+    },
+    {
+      "label": "Readiness",
+      "href": "incident-response-readiness.html",
+      "sectionsLabel": "Incident response readiness sections",
+      "sections": [
+        {"label": "Where it breaks", "href": "incident-response-readiness.html#failure"},
+        {"label": "Questions that show readiness", "href": "incident-response-readiness.html#questions"},
+        {"label": "What to put in place", "href": "incident-response-readiness.html#prepare"},
+        {"label": "What we will not do", "href": "incident-response-readiness.html#limits"},
+        {"label": "Prove it on a quiet week", "href": "incident-response-readiness.html#prove"}
+      ]
+    },
+    {
+      "label": "Cloud cost",
+      "href": "cloud-cost-reliability.html",
+      "sectionsLabel": "Cloud cost and reliability sections",
+      "sections": [
+        {"label": "What we will not promise", "href": "cloud-cost-reliability.html#promise"},
+        {"label": "Cost, as an operator", "href": "cloud-cost-reliability.html#cost"},
+        {"label": "Reliability without a new team", "href": "cloud-cost-reliability.html#reliability"},
+        {"label": "After a cutover", "href": "cloud-cost-reliability.html#cutover"}
+      ]
+    },
+    {
+      "label": "DevOps",
+      "href": "fractional-devops-sre.html",
+      "sectionsLabel": "Fractional DevOps and SRE sections",
+      "sections": [
+        {"label": "What the search is buying", "href": "fractional-devops-sre.html#search"},
+        {"label": "What this practice does", "href": "fractional-devops-sre.html#practice"},
+        {"label": "When a fractional engineer is second", "href": "fractional-devops-sre.html#second"},
+        {"label": "Before the job post", "href": "fractional-devops-sre.html#prepare"},
+        {"label": "How an engagement ends", "href": "fractional-devops-sre.html#result"}
+      ]
+    },
+    {
+      "label": "Method",
+      "href": "method.html",
+      "sectionsLabel": "Method sections",
+      "sections": [
+        {"label": "Map", "href": "method.html#map"},
+        {"label": "Name", "href": "method.html#name"},
+        {"label": "Join", "href": "method.html#join"},
+        {"label": "Prove", "href": "method.html#prove"},
+        {"label": "Leave", "href": "method.html#leave"},
+        {"label": "Analyze", "href": "method.html#analyze"},
+        {"label": "Review", "href": "method.html#review"},
+        {"label": "Align", "href": "method.html#align"}
+      ]
+    },
+    {
+      "label": "Contact",
+      "href": "contact.html",
+      "cta": true,
+      "sectionsLabel": "Contact sections",
+      "sections": [
+        {"label": "What to include", "href": "contact.html#include"}
+      ]
+    }
+  ]
+}

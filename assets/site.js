@@ -1,6 +1,5 @@
 (function () {
-  var toggle = document.getElementById("nav-toggle");
-  var drawer = document.getElementById("nav-drawer");
+  var menu = document.querySelector(".menu-details");
   var settingsToggle = document.getElementById("settings-toggle");
   var settingsPanel = document.getElementById("settings-panel");
   var themeButtons = document.querySelectorAll(".theme-list button");
@@ -22,16 +21,16 @@
     work: "practice.html"
   };
 
-  function closeNav() {
-    if (!drawer || !toggle) return;
-    drawer.hidden = true;
-    toggle.setAttribute("aria-expanded", "false");
-  }
-
   function closeSettings() {
     if (!settingsPanel || !settingsToggle) return;
     settingsPanel.hidden = true;
     settingsToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function closeSections() {
+    document.querySelectorAll(".nav-sections[open]").forEach(function (panel) {
+      panel.removeAttribute("open");
+    });
   }
 
   function applyTheme(name, persist) {
@@ -48,25 +47,11 @@
     });
   }
 
-  if (toggle && drawer) {
-    toggle.addEventListener("click", function () {
-      if (drawer.hidden) {
-        closeSettings();
-        drawer.hidden = false;
-        toggle.setAttribute("aria-expanded", "true");
-      } else {
-        closeNav();
-      }
-    });
-    drawer.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", closeNav);
-    });
-  }
-
   if (settingsToggle && settingsPanel) {
     settingsToggle.addEventListener("click", function () {
       if (settingsPanel.hidden) {
-        closeNav();
+        closeSections();
+        if (menu) menu.removeAttribute("open");
         settingsPanel.hidden = false;
         settingsToggle.setAttribute("aria-expanded", "true");
       } else {
@@ -80,21 +65,48 @@
     });
   }
 
+  document.querySelectorAll(".nav-sections").forEach(function (panel) {
+    panel.addEventListener("toggle", function () {
+      if (!panel.open) return;
+      closeSettings();
+      document.querySelectorAll(".nav-sections[open]").forEach(function (other) {
+        if (other !== panel) other.removeAttribute("open");
+      });
+    });
+  });
+
+  document.querySelectorAll("#site-nav a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (window.matchMedia("(max-width: 900px)").matches && menu) {
+        menu.removeAttribute("open");
+      }
+      closeSections();
+    });
+  });
+
   document.addEventListener("click", function (ev) {
-    if (!settingsPanel || settingsPanel.hidden) return;
-    if (settingsPanel.contains(ev.target) || settingsToggle.contains(ev.target)) return;
-    closeSettings();
+    if (settingsPanel && !settingsPanel.hidden) {
+      if (!settingsPanel.contains(ev.target) && !settingsToggle.contains(ev.target)) closeSettings();
+    }
+    document.querySelectorAll(".nav-sections[open]").forEach(function (panel) {
+      if (!panel.contains(ev.target)) panel.removeAttribute("open");
+    });
   });
 
   document.addEventListener("keydown", function (ev) {
-    if (ev.key === "Escape") {
-      closeNav();
-      closeSettings();
-    }
+    if (ev.key !== "Escape") return;
+    closeSections();
+    closeSettings();
+    if (menu) menu.removeAttribute("open");
   });
 
-  var path = location.pathname;
-  var onHome = /(?:^|\/)(?:index\.html)?$/.test(path);
+  var path = location.pathname.split("/").pop() || "index.html";
+  if (!path || path === "") path = "index.html";
+  document.querySelectorAll("#site-nav a.nav-link").forEach(function (link) {
+    if (link.getAttribute("href") === path) link.setAttribute("aria-current", "page");
+  });
+
+  var onHome = /(?:^|\/)(?:index\.html)?$/.test(location.pathname);
   if (onHome && location.hash && hashPages[location.hash.slice(1)]) {
     location.replace(hashPages[location.hash.slice(1)]);
     return;

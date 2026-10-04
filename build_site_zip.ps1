@@ -20,6 +20,29 @@ $Stage = Join-Path $Root "build\sitedrop"
 $ZipName = "CoalesceOps-$Version.zip"
 $Zip = Join-Path $Out $ZipName
 
+function Invoke-SitePython {
+    param([string[]]$PyArgs)
+    $runner = $null
+    $prefix = @()
+    foreach ($candidate in @("python3", "python")) {
+        if (Get-Command $candidate -ErrorAction SilentlyContinue) {
+            $runner = $candidate
+            break
+        }
+    }
+    if (-not $runner -and (Get-Command py -ErrorAction SilentlyContinue)) {
+        $runner = "py"
+        $prefix = @("-3")
+    }
+    if (-not $runner) {
+        throw "Python 3 is required to build the zip (menu check and search-engine config)."
+    }
+    & $runner @prefix @PyArgs
+    if ($LASTEXITCODE -ne 0) { throw "Python failed ($runner): $($PyArgs -join ' ')" }
+}
+
+Invoke-SitePython @((Join-Path $Root "check_site.py"))
+
 New-Item -ItemType Directory -Force -Path $Out | Out-Null
 if (Test-Path $Stage) { Remove-Item -Recurse -Force $Stage }
 New-Item -ItemType Directory -Force -Path $Stage | Out-Null
@@ -29,7 +52,18 @@ Copy-Item -Path (Join-Path $Root "LICENSE") -Destination $Stage
 Copy-Item -Path (Join-Path $Root ".htaccess") -Destination $Stage
 Copy-Item -Path (Join-Path $Root "robots.txt") -Destination $Stage
 Copy-Item -Path (Join-Path $Root "sitemap.xml") -Destination $Stage
+Copy-Item -Path (Join-Path $Root "site.webmanifest") -Destination $Stage
+$siteConfig = Get-Content -Path (Join-Path $Root "site.config.json") -Raw -Encoding UTF8 | ConvertFrom-Json
+$indexNowKey = "$($siteConfig.indexNowKey)".Trim()
+if (-not $indexNowKey) { throw "indexNowKey is missing in site.config.json" }
+$indexNowFile = Join-Path $Root ($indexNowKey + ".txt")
+if (-not (Test-Path $indexNowFile)) { throw "IndexNow key file is missing: $indexNowFile" }
+Copy-Item -Path $indexNowFile -Destination (Join-Path $Stage ($indexNowKey + ".txt"))
+$bingFile = Join-Path $Root "BingSiteAuth.xml"
+if (Test-Path $bingFile) { Copy-Item -Path $bingFile -Destination $Stage }
 Copy-Item -Path (Join-Path $Root "assets") -Destination (Join-Path $Stage "assets") -Recurse
+
+Invoke-SitePython @((Join-Path $Root "apply_site_config.py"), "--stage", $Stage)
 
 Get-ChildItem -Path $Out -Filter "CoalesceOps-*.zip" -ErrorAction SilentlyContinue | Remove-Item -Force
 
@@ -60,7 +94,44 @@ try {
         if ($name.StartsWith('/') -or $name.StartsWith('\')) { throw "Zip entry is absolute: $name" }
     }
     if ($names -notcontains 'index.html') { throw "index.html is not at the zip root" }
-    if ($names -notcontains 'assets/favicon.svg') { throw "assets/favicon.svg is missing or not a forward-slash path" }
+    foreach ($name in $names) {
+        $lower = $name.ToLowerInvariant()
+        if ($lower -match '(^|/)(\.git|\.cursor|includes|build|installers|__pycache__|node_modules)(/|$)') {
+            throw "Zip contains a source-only path: $name"
+        }
+        if ($lower -match '\.(zip|7z|ps1|py|pyc|pyo|sh|md|json|bak|log|ya?ml|toml|ini)$') {
+            throw "Zip contains a file that must not be published: $name"
+        }
+        if ($lower -match '(^|/)(readme\.md|sop\.md|site\.config\.json|nav\.json|version)$') {
+            throw "Zip contains an operator file: $name"
+        }
+    }
+    $staged = Get-ChildItem -Path $Stage -Recurse -File | Where-Object {
+        $_.Extension -in @(".html", ".txt", ".xml", ".webmanifest", ".svg", ".css", ".js") -or $_.Name -eq ".htaccess"
+    } | Select-String -Pattern 'github\.com|github\.io|gitlab\.com|bitbucket\.org|releases/download' -AllMatches
+    if ($staged) {
+        $hit = $staged | Select-Object -First 1
+        throw "Staged site still points at source or a release: $($hit.Path)"
+    }
+    foreach ($required in @(
+        'assets/favicon.svg',
+        'assets/favicon-32.png',
+        'assets/apple-touch-icon.png',
+        'assets/icon-192.png',
+        'assets/icon-512.png',
+        'assets/og.png',
+        'robots.txt',
+        'sitemap.xml',
+        'site.webmanifest',
+        'secops-consulting.html',
+        'infrastructure-assessment.html',
+        'incident-response-readiness.html',
+        'cloud-cost-reliability.html',
+        'fractional-devops-sre.html',
+        ($indexNowKey + '.txt')
+    )) {
+        if ($names -notcontains $required) { throw "Zip is missing $required" }
+    }
 }
 finally {
     $packed.Dispose()
