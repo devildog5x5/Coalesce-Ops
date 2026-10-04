@@ -815,7 +815,8 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
   .record,
   .process,
   .contact-grid,
-  .contact-points {
+  .contact-points,
+  .packages {
     grid-template-columns: 1fr;
   }
   .process article,
@@ -845,6 +846,51 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
 @media (max-width: 420px) {
   .brand-legal { display: none; }
   .hero h1 { font-size: 2.45rem; }
+}
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.package {
+  background: var(--card);
+  border: 1px solid var(--line);
+  padding: 24px;
+}
+.package h2 {
+  margin: 8px 0 8px;
+  font-size: 1.45rem;
+}
+.package .fee {
+  margin: 0 0 12px;
+  font-weight: 600;
+  color: var(--ink);
+}
+.package ul {
+  margin: 0;
+  padding-left: 1.15em;
+  color: var(--ink-soft);
+}
+.package li { margin: 0 0 0.4em; }
+
+.faq details {
+  border-top: 1px solid var(--line);
+}
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary {
+  padding: 16px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.faq summary h3 {
+  display: inline;
+  font-size: 1.05rem;
+}
+.faq details p {
+  margin: 0 0 16px;
+  max-width: 42em;
+  color: var(--ink-soft);
 }
 
 @media (prefers-reduced-motion: reduce) {

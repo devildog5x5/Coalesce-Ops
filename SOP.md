@@ -23,7 +23,7 @@ The footer repeats the page links. The header menu is the one that must list eve
 
 ## Search engines
 
-The public site is `https://coalesceops.com`.
+The public site is only `https://coalesceops.com`. `www`, plain `http`, `/index.html`, `/index.php`, and a trailing slash on a file all redirect to that host. The home page is linked as `/`, because `/index.html` is an alternate of the canonical URL.
 
 `site.config.json` holds the verification tokens and the business details that are not already printed on the site. `PLACEHOLDER` and blank optional fields are left out of the pages. Do not invent an address, a service area, reviews, or ratings. Phone, email, and the founder's name stay as they are published.
 

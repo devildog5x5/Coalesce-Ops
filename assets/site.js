@@ -101,9 +101,11 @@
   });
 
   var path = location.pathname.split("/").pop() || "index.html";
-  if (!path || path === "") path = "index.html";
+  if (!path || path === "" || path === "index.html") path = "index.html";
   document.querySelectorAll("#site-nav a.nav-link").forEach(function (link) {
-    if (link.getAttribute("href") === path) link.setAttribute("aria-current", "page");
+    var href = (link.getAttribute("href") || "").split("#")[0];
+    if (href === "/" || href === "" || href === "index.html") href = "index.html";
+    if (href === path) link.setAttribute("aria-current", "page");
   });
 
   var onHome = /(?:^|\/)(?:index\.html)?$/.test(location.pathname);
