@@ -4,7 +4,7 @@ One practice for joining separate teams, systems, and sites into a single operat
 
 Open `index.html` locally. The public site is `https://coalesceops.com`.
 
-Rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1`. Python 3 is required: it checks the menu and stamps `site.config.json`. Unzip the result into `public_html` so the files sit at the archive root, with forward-slash paths. Footer on every page: Coalesce Ops v1.3.0. The live host is only `https://coalesceops.com`.
+Rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1`. Python 3 is required: it checks the menu and stamps `site.config.json`. Unzip the result into `public_html` so the files sit at the archive root, with forward-slash paths. Footer on every page: Coalesce Ops v1.3.1. The live host is only `https://coalesceops.com`.
 
 Do not link to this repository, to source code, or to a release archive from the live site. That rule is in [SOP.md](SOP.md).
 

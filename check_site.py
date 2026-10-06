@@ -162,6 +162,8 @@ def main() -> None:
             errors.append(f"Duplicate title on {name} and {titles[title_text]}")
         else:
             titles[title_text] = name
+            if not 40 <= len(title_text) <= 60:
+                errors.append(f"{name} title is {len(title_text)} characters; aim for 40–60")
         description = meta(html, "description")
         if not description:
             errors.append(f"{name} is missing a meta description")
@@ -169,8 +171,8 @@ def main() -> None:
             errors.append(f"Duplicate meta description on {name} and {descriptions[description]}")
         else:
             descriptions[description] = name
-            if name != "404.html" and not 70 <= len(description) <= 170:
-                errors.append(f"{name} meta description is {len(description)} characters")
+            if not 120 <= len(description) <= 160:
+                errors.append(f"{name} meta description is {len(description)} characters; aim for 120–160")
         canonical = re.search(r'<link rel="canonical" href="([^"]+)"', html)
         canonical_href = canonical.group(1) if canonical else ""
         expected_canonical = ORIGIN + "/" if name == "index.html" else f"{ORIGIN}/{name}"
@@ -244,8 +246,11 @@ def main() -> None:
                 break
             previous = level
         for image in re.findall(r"<img\b[^>]*>", html):
-            if not re.search(r'\balt="[^"]*"', image):
-                errors.append(f"{name} has an image without alt text")
+            alt = re.search(r'\balt="([^"]*)"', image)
+            if not alt or not alt.group(1).strip():
+                errors.append(f"{name} has an image without descriptive alt text")
+            elif "favicon.svg" in image and alt.group(1) != "Coalesce Ops logo":
+                errors.append(f"{name} logo alt is {alt.group(1)!r}")
         for href in re.findall(r'href="([^"]+)"', html):
             if href.startswith(("mailto:", "tel:", "https://", "http://", "#")):
                 continue
