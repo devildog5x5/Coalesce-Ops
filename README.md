@@ -4,11 +4,11 @@ One practice for joining separate teams, systems, and sites into a single operat
 
 Open `index.html` locally. The public site is `https://coalesceops.com`.
 
-Rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1`. Python 3 is required: it checks the menu and stamps `site.config.json`. The zip is named `coalesceops-vX.Y.Z.zip`, with the version taken from `VERSION`. Unzip the result into `public_html` so the files sit at the archive root, with forward-slash paths. Every page ends with one line: Coalesce Ops v1.3.3 · © 2026 Robert Foster · Text 801-319-1061 for support. The live host is only `https://coalesceops.com`.
+Rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1`. Python 3 is required: it checks the menu and stamps `site.config.json`. The zip is named `coalesceops-vX.Y.Z.zip`, with the version taken from `VERSION`. Unzip the result into `public_html` so the files sit at the archive root, with forward-slash paths. Every page ends with one line: Coalesce Ops v1.3.4 · © 2026 Robert Foster · Inquiries Text: 801.319.1061. The live host is only `https://coalesceops.com`.
 
 Do not link to this repository, to source code, or to a release archive from the live site. That rule is in [SOP.md](SOP.md).
 
-**Contact:** Text 801-319-1061 for customer support.
+**Contact:** Inquiries Text: 801.319.1061.
 
 ## Main menu
 
@@ -39,7 +39,7 @@ Leave these as `PLACEHOLDER` until they are real and public. Do not invent them.
 - `areaServed` — only if a service area should be published
 - `sameAs` — public `https://` profile URLs only. A repository, source tree, or release archive is refused.
 
-Coalesce Ops, Robert Foster, and 801-319-1061 are already published. They are not placeholders. Do not publish a support email address.
+Coalesce Ops, Robert Foster, and 801.319.1061 are already published. They are not placeholders. Do not publish a support email address.
 
 ### IndexNow
 

@@ -20,7 +20,7 @@ Pack: `powershell -File .\build_site_zip.ps1` → `installers\coalesceops-v<x.y.
 
 The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 
-1. Bump `VERSION` before a new ship. Put that same version in the compact footer line on every page: `Coalesce Ops vX.Y.Z · © 2026 Robert Foster · Text 801-319-1061 for support`. Commit and `git push` to `main`.
+1. Bump `VERSION` before a new ship. Put that same version in the compact footer line on every page: `Coalesce Ops vX.Y.Z · © 2026 Robert Foster · Inquiries Text: 801.319.1061`. Commit and `git push` to `main`.
 2. Tag `vX.Y.Z` and `gh release create`, uploading `coalesceops-vX.Y.Z.zip`.
 3. Verify the asset URL with `gh release view`. Never invent `releases/download/...` links.
 4. Do not put that URL, the repository, or any source-code link in the site, the menu, the footer, the sitemap, structured data `sameAs`, or the README. `SOP.md` forbids serving source or release archives from the live site. Report the URL only in the chat handoff.

@@ -222,7 +222,7 @@ def main() -> None:
             footer_line = (
                 f'<p class="foot-meta"><span class="foot-meta-part">Coalesce Ops v{version}</span>'
                 f'<span class="foot-meta-part">© 2026 Robert Foster</span>'
-                f'<span>Text <a href="sms:+18013191061">801-319-1061</a> for support</span></p>'
+                f'<span>Inquiries Text: <a href="sms:+18013191061">801.319.1061</a></span></p>'
             )
             if footer_line not in block:
                 errors.append(f"{name} footer is missing the compact version line")
