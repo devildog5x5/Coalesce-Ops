@@ -773,6 +773,11 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
 }
 .foot-nav a:hover { color: var(--foot-accent); }
 .foot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  row-gap: 2px;
   margin: 14px 0 0;
   padding: 10px 8px 2px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
