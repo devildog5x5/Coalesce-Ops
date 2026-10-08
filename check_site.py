@@ -214,6 +214,22 @@ def main() -> None:
         ):
             if needle not in html:
                 errors.append(f"{name} is missing {needle}")
+        footer = re.search(r'<footer class="site-foot">.*</footer>', html, re.S)
+        if not footer:
+            errors.append(f"{name} is missing the site footer")
+        else:
+            block = footer.group(0)
+            footer_line = (
+                f'<p class="foot-meta"><span class="foot-meta-part">Coalesce Ops v{version}</span>'
+                f'<span class="foot-meta-part">© 2026 Robert Foster</span>'
+                f'<a href="mailto:rmf@coalesceops.com">rmf@coalesceops.com</a></p>'
+            )
+            if footer_line not in block:
+                errors.append(f"{name} footer is missing the compact version line")
+            if 'href="tel:+18013191061"' not in block:
+                errors.append(f"{name} footer is missing the phone link")
+            if any(token in block for token in ("foot-name", "foot-legal", "foot-version", "foot-contact")):
+                errors.append(f"{name} still uses the split brand, copyright, version, or email footer")
         if name == "404.html":
             if meta(html, "robots") != "noindex":
                 errors.append("404.html must be noindex")

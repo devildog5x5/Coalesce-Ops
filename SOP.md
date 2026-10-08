@@ -21,6 +21,8 @@ Do not ship a page whose menu is a subset of the others. Do not add a public pag
 
 The footer repeats the page links. The header menu is the one that must list every page and every section in `includes/nav.json`.
 
+Every page ends with the same compact line, under those links: `Coalesce Ops vX.Y.Z · © 2026 Robert Foster · rmf@coalesceops.com`. The email is a mailto link. The version is the text in `VERSION`. The phone number stays as a link in the footer and on the contact page.
+
 ## Search engines
 
 The public site is only `https://coalesceops.com`. `www`, plain `http`, `/index.html`, `/index.php`, and a trailing slash on a file all redirect to that host. The home page is linked as `/`, because `/index.html` is an alternate of the canonical URL.
