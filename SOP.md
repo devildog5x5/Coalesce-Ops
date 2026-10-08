@@ -21,7 +21,7 @@ Do not ship a page whose menu is a subset of the others. Do not add a public pag
 
 The footer repeats the page links. The header menu is the one that must list every page and every section in `includes/nav.json`.
 
-Every page ends with the same compact line, under those links: `Coalesce Ops vX.Y.Z · © 2026 Robert Foster · Text 801-319-1061 for support`. The number is an sms link. The version is the text in `VERSION`. Customer support is that text line. Do not publish a support email address.
+Every page ends with the same compact line, under those links: `Coalesce Ops vX.Y.Z · © 2026 Robert Foster · Inquiries Text: 801.319.1061`. The number is an sms link. The version is the text in `VERSION`. Inquiries use that line. Do not publish a support email address.
 
 ## Search engines
 
