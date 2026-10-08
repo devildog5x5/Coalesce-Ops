@@ -9,19 +9,19 @@ alwaysApply: true
 
 ## Zip filename
 
-Never ship `CoalesceOps.zip`. Version from `VERSION` goes **at the end**:
+Never ship an unversioned zip. The site name and version are both in the filename:
 
-- Correct: `CoalesceOps-1.0.0.zip`
-- Wrong: unversioned names, or a git hash in the filename
+- Correct: `coalesceops-v1.0.0.zip`
+- Wrong: `CoalesceOps.zip`, `CoalesceOps-1.0.0.zip`, or a git hash in the filename
 
-Pack: `powershell -File .\build_site_zip.ps1` → `installers\CoalesceOps-<x.y.z>.zip`. Zip root is `public_html` (`index.html`, `assets/`, `LICENSE`). Entry names use forward slashes. Never a nested folder. Do not commit `installers/`.
+Pack: `powershell -File .\build_site_zip.ps1` → `installers\coalesceops-v<x.y.z>.zip`. Zip root is `public_html` (`index.html`, `assets/`, `LICENSE`). Entry names use forward slashes. Never a nested folder. Do not commit `installers/`.
 
 ## GitHub Release (required)
 
 The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 
-1. Bump `VERSION` before a new ship. Put that same version in the footer as plain text: `Coalesce Ops vX.Y.Z`. Commit and `git push` to `main`.
-2. Tag `vX.Y.Z` and `gh release create`, uploading `CoalesceOps-X.Y.Z.zip`.
+1. Bump `VERSION` before a new ship. Put that same version in the compact footer line on every page: `Coalesce Ops vX.Y.Z · © 2026 Robert Foster · rmf@coalesceops.com`. Commit and `git push` to `main`.
+2. Tag `vX.Y.Z` and `gh release create`, uploading `coalesceops-vX.Y.Z.zip`.
 3. Verify the asset URL with `gh release view`. Never invent `releases/download/...` links.
 4. Do not put that URL, the repository, or any source-code link in the site, the menu, the footer, the sitemap, structured data `sameAs`, or the README. `SOP.md` forbids serving source or release archives from the live site. Report the URL only in the chat handoff.
 
@@ -29,6 +29,6 @@ The zip must be **downloadable from GitHub**. Do not leave it only on disk.
 
 | Line | Content |
 |------|---------|
-| **Zip** | Full URL to `CoalesceOps-X.Y.Z.zip` |
+| **Zip** | Full URL to `coalesceops-vX.Y.Z.zip` |
 | **Release page** | `https://github.com/devildog5x5/Coalesce-Ops/releases/tag/vX.Y.Z` |
 | **WinSCP** | Unzip → upload contents into `public_html` |

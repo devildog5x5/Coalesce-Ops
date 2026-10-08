@@ -1,4 +1,4 @@
-# Build CoalesceOps-<version>.zip for Hostinger public_html.
+# Build coalesceops-v<version>.zip for Hostinger public_html.
 # Entry names use forward slashes so Linux unzip (Hostinger) does not
 # treat paths such as assets\favicon.svg as literal filenames.
 $ErrorActionPreference = "Stop"
@@ -17,7 +17,7 @@ if ($Version -notmatch '^\d+\.\d+\.\d+$') {
 
 $Out = Join-Path $Root "installers"
 $Stage = Join-Path $Root "build\sitedrop"
-$ZipName = "CoalesceOps-$Version.zip"
+$ZipName = "coalesceops-v$Version.zip"
 $Zip = Join-Path $Out $ZipName
 
 function Invoke-SitePython {
@@ -65,6 +65,7 @@ Copy-Item -Path (Join-Path $Root "assets") -Destination (Join-Path $Stage "asset
 
 Invoke-SitePython @((Join-Path $Root "apply_site_config.py"), "--stage", $Stage)
 
+Get-ChildItem -Path $Out -Filter "coalesceops-v*.zip" -ErrorAction SilentlyContinue | Remove-Item -Force
 Get-ChildItem -Path $Out -Filter "CoalesceOps-*.zip" -ErrorAction SilentlyContinue | Remove-Item -Force
 
 $archive = [System.IO.Compression.ZipFile]::Open($Zip, [System.IO.Compression.ZipArchiveMode]::Create)

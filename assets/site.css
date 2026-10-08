@@ -756,39 +756,14 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
   background: var(--foot);
   color: var(--foot-muted);
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 28px 0 36px;
+  padding: 28px 0 22px;
 }
-.foot-row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 16px 32px;
-  align-items: end;
-}
-.foot-name {
-  margin: 0;
-  color: var(--foot-ink);
-  font-family: var(--serif);
-  font-size: 1.15rem;
-}
-.foot-version,
-.foot-legal { margin: 4px 0 0; font-size: 0.92rem; }
-.foot-version { color: var(--foot-ink); }
-.foot-contact { margin: 0; text-align: right; }
-.foot-contact p { margin: 0 0 4px; }
-.foot-contact a {
-  color: var(--foot-ink);
-  text-decoration: none;
-  border-bottom: 1px solid var(--foot-muted);
-}
-.foot-contact a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-accent); }
 .foot-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  margin: 0;
+  padding: 0;
 }
 .foot-nav a {
   color: var(--foot-muted);
@@ -797,6 +772,33 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
   font-weight: 600;
 }
 .foot-nav a:hover { color: var(--foot-accent); }
+.foot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  row-gap: 2px;
+  margin: 14px 0 0;
+  padding: 10px 8px 2px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--foot-muted);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.45;
+  text-align: center;
+}
+.foot-meta-part,
+.foot-meta a { white-space: nowrap; }
+.foot-meta-part::after {
+  content: " · ";
+  white-space: pre;
+}
+.foot-meta a {
+  color: var(--foot-muted);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.foot-meta a:hover { color: var(--foot-accent); }
 
 @media (max-width: 900px) {
   .nav-group,
@@ -840,7 +842,6 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
   .brand { gap: 8px; }
   .brand-name { font-size: 1rem; }
   .settings-btn { padding: 0 8px; }
-  .foot-contact { text-align: left; }
 }
 
 @media (max-width: 420px) {
