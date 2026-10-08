@@ -21,13 +21,13 @@ Do not ship a page whose menu is a subset of the others. Do not add a public pag
 
 The footer repeats the page links. The header menu is the one that must list every page and every section in `includes/nav.json`.
 
-Every page ends with the same compact line, under those links: `Coalesce Ops vX.Y.Z · © 2026 Robert Foster · rmf@coalesceops.com`. The email is a mailto link. The version is the text in `VERSION`. The phone number stays as a link in the footer and on the contact page.
+Every page ends with the same compact line, under those links: `Coalesce Ops vX.Y.Z · © 2026 Robert Foster · Text 801-319-1061 for support`. The number is an sms link. The version is the text in `VERSION`. Customer support is that text line. Do not publish a support email address.
 
 ## Search engines
 
 The public site is only `https://coalesceops.com`. `www`, plain `http`, `/index.html`, `/index.php`, and a trailing slash on a file all redirect to that host. The home page is linked as `/`, because `/index.html` is an alternate of the canonical URL.
 
-`site.config.json` holds the verification tokens and the business details that are not already printed on the site. `PLACEHOLDER` and blank optional fields are left out of the pages. Do not invent an address, a service area, reviews, or ratings. Phone, email, and the founder's name stay as they are published.
+`site.config.json` holds the verification tokens and the business details that are not already printed on the site. `PLACEHOLDER` and blank optional fields are left out of the pages. Do not invent an address, a service area, reviews, or ratings. The phone number and the founder's name stay as they are published. Do not add a support email address.
 
 After a real value is filled in, rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1` and upload that.
 

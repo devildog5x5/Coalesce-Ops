@@ -222,7 +222,7 @@ def main() -> None:
             footer_line = (
                 f'<p class="foot-meta"><span class="foot-meta-part">Coalesce Ops v{version}</span>'
                 f'<span class="foot-meta-part">© 2026 Robert Foster</span>'
-                f'<a href="mailto:rmf@coalesceops.com">rmf@coalesceops.com</a></p>'
+                f'<span>Text <a href="sms:+18013191061">801-319-1061</a> for support</span></p>'
             )
             if footer_line not in block:
                 errors.append(f"{name} footer is missing the compact version line")
@@ -239,6 +239,14 @@ def main() -> None:
             errors.append(f"{name} contains a PLACEHOLDER value")
         if re.search(r"starting at|\$\s?\d", html, re.I):
             errors.append(f"{name} publishes a price. This site has no price list.")
+        if re.search(r"mailto:", html, re.I):
+            errors.append(f"{name} still has a mailto link")
+        if re.search(r"email us", html, re.I):
+            errors.append(f"{name} still says email us")
+        if re.search(r"\bemail\b", html, re.I):
+            errors.append(f"{name} still mentions email")
+        if re.search(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}", html):
+            errors.append(f"{name} still publishes an email address")
         errors.extend(source_leaks(html, name))
         main = re.search(r"<main\b.*</main>", html, re.S)
         words = re.findall(r"[A-Za-z0-9']+", re.sub(r"<[^>]+>", " ", main.group(0) if main else ""))
@@ -268,7 +276,7 @@ def main() -> None:
             elif "favicon.svg" in image and alt.group(1) != "Coalesce Ops logo":
                 errors.append(f"{name} logo alt is {alt.group(1)!r}")
         for href in re.findall(r'href="([^"]+)"', html):
-            if href.startswith(("mailto:", "tel:", "https://", "http://", "#")):
+            if href.startswith(("mailto:", "tel:", "sms:", "https://", "http://", "#")):
                 continue
             path_part, _, anchor = href.partition("#")
             if path_part.startswith("/"):
