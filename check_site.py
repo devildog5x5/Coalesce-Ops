@@ -221,8 +221,8 @@ def main() -> None:
             block = footer.group(0)
             footer_line = (
                 f'<p class="foot-meta"><span class="foot-meta-part">Coalesce Ops v{version}</span>'
-                f'<span class="foot-meta-part">© 2026 Robert Foster</span>'
-                f'<span>Inquiries Text: <a href="sms:+18013191061">801.319.1061</a></span></p>'
+                f'<span class="foot-meta-part">© 2026 REKKY Consulting LLC</span>'
+                f'<span>Inquiries Text First Then Call: <a href="sms:+18013191061">801.319.1061</a></span></p>'
             )
             if footer_line not in block:
                 errors.append(f"{name} footer is missing the compact version line")
@@ -237,6 +237,12 @@ def main() -> None:
             errors.append(f"{name} is noindex")
         if "PLACEHOLDER" in html:
             errors.append(f"{name} contains a PLACEHOLDER value")
+        if '"legalName": "REKKY Consulting LLC"' not in html:
+            errors.append(f"{name} JSON-LD is missing legalName REKKY Consulting LLC")
+        if '"name": "REKKY Consulting LLC"' not in html:
+            errors.append(f"{name} JSON-LD is missing the REKKY Consulting LLC copyright holder")
+        if "+1-801-319-1061" not in html:
+            errors.append(f"{name} structured data telephone is not +1-801-319-1061")
         if re.search(r"starting at|\$\s?\d", html, re.I):
             errors.append(f"{name} publishes a price. This site has no price list.")
         if re.search(r"mailto:", html, re.I):

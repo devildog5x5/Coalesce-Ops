@@ -516,14 +516,16 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 500; letter-spacing: -0.02e
 }
 
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  max-width: 100%;
   min-height: 48px;
   padding: 12px 18px;
   font: inherit;
   font-weight: 600;
+  line-height: 1.25;
+  text-align: center;
   text-decoration: none;
+  white-space: normal;
   border: 1px solid transparent;
 }
 .btn.primary { background: var(--btn); color: var(--btn-text); }
@@ -796,6 +798,10 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
 .foot-meta-part,
 .foot-meta > span,
 .foot-meta a { white-space: nowrap; }
+@media (max-width: 480px) {
+  .foot-meta > span:last-child,
+  .foot-meta > span:last-child a { white-space: normal; }
+}
 .foot-meta-part::after {
   content: " · ";
   white-space: pre;
@@ -860,6 +866,9 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
+}
+@media (max-width: 900px) {
+  .packages { grid-template-columns: 1fr; }
 }
 .package {
   background: var(--card);
