@@ -4,11 +4,11 @@ One practice for joining separate teams, systems, and sites into a single operat
 
 Open `index.html` locally. The public site is `https://coalesceops.com`.
 
-Rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1`. Python 3 is required: it checks the menu and stamps `site.config.json`. The zip is named `coalesceops-vX.Y.Z.zip`, with the version taken from `VERSION`. Unzip the result into `public_html` so the files sit at the archive root, with forward-slash paths. Every page ends with one line: Coalesce Ops v1.3.4 · © 2026 Robert Foster · Inquiries Text: 801.319.1061. The live host is only `https://coalesceops.com`.
+Rebuild the Hostinger drop with `powershell -File .\build_site_zip.ps1`. Python 3 is required: it checks the menu and stamps `site.config.json`. The zip is named `coalesceops-vX.Y.Z.zip`, with the version taken from `VERSION`. Unzip the result into `public_html` so the files sit at the archive root, with forward-slash paths. Every page ends with one line: Coalesce Ops v1.3.5 · © 2026 REKKY Consulting LLC · Inquiries Text First Then Call: 801.319.1061. The live host is only `https://coalesceops.com`.
 
 Do not link to this repository, to source code, or to a release archive from the live site. That rule is in [SOP.md](SOP.md).
 
-**Contact:** Inquiries Text: 801.319.1061.
+**Contact:** Inquiries Text First Then Call: 801.319.1061.
 
 ## Main menu
 
@@ -35,7 +35,7 @@ File placement works without editing a page. Put Google's HTML file in the site 
 Leave these as `PLACEHOLDER` until they are real and public. Do not invent them.
 
 - `address` — fill `streetAddress`, `addressLocality`, `addressRegion`, `postalCode`, and `addressCountry` together, or leave them all blank
-- `legalName` — only if the legal name is different from Coalesce Ops
+- `legalName` — REKKY Consulting LLC
 - `areaServed` — only if a service area should be published
 - `sameAs` — public `https://` profile URLs only. A repository, source tree, or release archive is refused.
 
@@ -60,4 +60,4 @@ One page from a shell:
 curl "https://api.indexnow.org/indexnow?url=https://coalesceops.com/&key=3adb4c7af657a417648edbc4bdf85574"
 ```
 
-Copyright © 2026 Robert Foster · Coalesce Ops. All rights reserved.
+Copyright © 2026 REKKY Consulting LLC · Coalesce Ops. All rights reserved.
