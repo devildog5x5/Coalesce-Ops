@@ -867,6 +867,9 @@ address a:hover { color: var(--foot-accent); border-bottom-color: var(--foot-acc
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
+@media (max-width: 900px) {
+  .packages { grid-template-columns: 1fr; }
+}
 .package {
   background: var(--card);
   border: 1px solid var(--line);
